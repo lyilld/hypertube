@@ -1,0 +1,13 @@
+{% block body %}
+Bienvenue sur votre profile {{ user.username }} </br>
+<img class='img_profile' src="../../../{{ user.image }}"> </br>
+<a href="EditImage"> Edite ton image</a> </br>
+<a href="edit"> change ton password</a> </br>
+<a href="EditEmail"> change ton email</a> </br>
+Vous êtes inscrit depuis le : </br>
+nombre de film visonnés: </br>
+nombre d'heure de visionage: </br>
+Votre liste de film en favoris: </br>
+Historique des dernier film regardé: </br>
+
+{% endblock %}

@@ -1,12 +1,12 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host: 127.0.0.1
+    database_host: localhost
     database_port: null
-    database_name: symfony
+    database_name: hypertube
     database_user: root
-    database_password: null
-    mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: null
-    mailer_password: null
+    database_password: root
+    mailer_transport: gmail
+    mailer_host: localhost
+    mailer_user: lucasyv12@gmail.com
+    mailer_password: 0314A7a30
     secret: 17e7c2f3783b5077248d309fc3a27e3f57ca36d8

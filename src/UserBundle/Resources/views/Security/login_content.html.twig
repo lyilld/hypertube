@@ -1,0 +1,52 @@
+<div id="container">
+</div>
+{{ render(controller("FOSUserBundle:Registration:MyRegister")) }}
+
+<div id="login" class="main_form_register">
+	<a><img id="Fb_logo" src=""></a>
+	<a><img id="ecole_logo" src=""></a>
+	<form action="{{ path("fos_user_security_check") }}" method="post"  class="sky-form">
+		<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+		<header>Login form
+
+		</header>
+
+		<fieldset>
+			<section>
+				<label for="username" class="input">{{ 'Username'|trans }}
+				<i class="fa fa-user fa-lg place_icon"></i>
+				<input type="text" placeholder="Username" id="username" name="_username" value="{{ last_username }}" required="required" />
+				<b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+				</label>
+			</section>
+
+			<section>
+				<label class="input" for="password">{{ 'Password'|trans }}
+					<i class="fa fa-lock fa-lg place_icon"></i>
+		    <input placeholder="Password" type="password" id="password" name="_password" required="required" />
+					<b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+				</label>
+			</section>
+
+			<section>
+				<div class="row">
+					<div class="col col-4">
+						<input type="checkbox" id="remember_me" name="checkbox-inline" value="on" />
+				    <label class="checkbox" for="remember_me">{{ 'remember me'|trans }}</label>
+					</div>
+					<div class="col col-8">
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<a href="forgetpwd"> Mot de passe oublié</a>
+			</section>
+
+		</fieldset>
+		<footer>
+			<input class="button" type="submit" id="_submit" name="_submit" value="{{ 'Log In'|trans }}" />
+			<span onclick="display_register();" class="button button-secondary">Register</span>
+		</footer>
+	</form>
+</div>
