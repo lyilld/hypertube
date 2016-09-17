@@ -3,6 +3,7 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<link rel="stylesheet" href="{{ asset('/bundles/CSS/layout.css') }}">
+        <link rel="stylesheet" href="{{ asset('/bundles/CSS/pagination.css') }}">
         <link rel="stylesheet" href="{{ asset('/bundles/CSS/sky-forms.css') }}">
         <link rel="stylesheet" href="{{ asset('/bundles/CSS/styles.css') }}">
         <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -11,7 +12,7 @@
     	<script type="text/javascript" src="{{ asset('/bundles/JS/utils.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/bundles/JS/OMDB.js') }}"></script>
         <script type='text/javascript' src="{{ asset('/bundles/JS/jquery.particleground.js') }}"></script>
-        <link rel="icon" type="image/png" href="{{ asset('/bundles/IMAGE/favicon.png') }}">
+        <link rel="icon" type="image/png" href="{{ asset('/bundles/IMAGE/iconHT.png') }}">
         <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.js"></script>
     	<title>HYPERTube</title>
     </head>
@@ -26,8 +27,8 @@
     			<div id="menu_container">
     				<div id="selector"></div>
     				<a><img id="home_icon" src="{{ asset('/bundles/IMAGE/burger_icon.png') }}"></a>
-	    			<a id="menu_1" href=""><span id="menu_span_active">HOME</span></a>
-	    			<a id="menu_2" href=""><span id="menu_span_txt" >MOVIES</span></a>
+	    			<a id="menu_1" href="http://localhost:8080/GIT/web/app_dev.php/"><span id="menu_span_active">HOME</span></a>
+	    			<a id="menu_2" href="http://localhost:8080/GIT/web/app_dev.php/movie"><span id="menu_span_txt" >MOVIES</span></a>
 	    			<a id="menu_3" href=""><span id="menu_span_txt">SERIES</span></a>
 	    			<a id="menu_4" href=""><span id="menu_span_txt">SHONEN</span></a>
 	    			<a><img class='icon_menu' src="{{ asset('/bundles/IMAGE/Connect.png') }}"></a>
@@ -78,8 +79,9 @@
 	    		</div>
     		</div>
     	</div>
-					{% block body %}
-					{% endblock %}
+		{% block body %}
+		{% endblock %}
+         <div id="footer" style="position: relative; width: 100%; height: 100px; background-color: rgb(30,30,30); margin-top: 50px;"></div>
         <div id="background"></div>
     </body>
 <html>

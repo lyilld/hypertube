@@ -1,0 +1,78 @@
+CoreBundle\Entity\OMDb:
+    type: entity
+    table: null
+    repositoryClass: CoreBundle\Repository\OMDbRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+            unique: true
+            column: Title
+        year:
+            type: string
+            length: 255
+            column: Year
+        released:
+            type: string
+            length: 255
+            column: Released
+        runtime:
+            type: string
+            length: 255
+            column: Runtime
+        genre:
+            type: string
+            length: 255
+            column: Genre
+        director:
+            type: string
+            length: 255
+            column: Director
+        writer:
+            type: text
+            length: 10000
+            column: Writer
+        actors:
+            type: text
+            length: 10000
+            column: Actors
+        plot:
+            type: text
+            length: 10000
+            column: Plot
+        language:
+            type: string
+            length: 255
+            column: Language
+        poster:
+            type: text
+            length: 10000
+            column: Poster
+        rating:
+            type: string
+            length: 255
+            column: Rating
+        rated:
+            type: string
+            length: 255
+            column: Rated
+        idmdb:
+            type: string
+            lenght: 255
+            unique: true
+            column: Idmdb
+        magnet:
+            type: text
+            length: 10000
+            column: Magnet
+        datetime:
+            type: string
+            length: 255
+            column: Datetime
+    lifecycleCallbacks: {  }

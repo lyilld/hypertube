@@ -1,0 +1,80 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% block body %}
+
+<div id="search_space">
+	<form>
+		<select class="select">
+			<option value="0">Filter</option>
+			<option value="1">Years</option>
+			<option value="2">Alphabetic</option>
+		</select>
+		<select class="select">
+			<option value="0">Genre</option>
+			<option value="1">Action</option>
+			<option value="2">Adventure</option>
+			<option value="3">Comedie</option>
+			<option value="4">Sci-Fi</option>
+		</select>
+		<select class="select">
+			<option value="0">Years</option>
+			<option value="1">2016</option>
+			<option value="2">2015</option>
+			<option value="3">2014</option>
+			<option value="4">2013</option>
+		</select>
+		<select class="select">
+			<option value="0">Rated</option>
+			<option value="1">*</option>
+			<option value="2">**</option>
+			<option value="3">***</option>
+			<option value="4">****</option>
+			<option value="5">*****</option>
+		</select>
+        <input class="select_search" type="text" placeholder="search a movie">
+		<button type="submit" id="submit_filter">Search by filter</button>
+	</form>
+</div>
+
+
+<div class="pagination-container wow zoomIn mar-b-1x" data-wow-duration="0.5s">
+	<ul class="pagination">
+		<li class="pagination-item--wide first"> <a class="pagination-link--wide first" href="#">Previous</a> </li>
+		<li class="pagination-item first-number is-active"> <a class="pagination-link" href="#">1</a> </li>
+		<li class="pagination-item"> <a class="pagination-link" href="#">2</a> </li>
+		<li class="pagination-item "> <a class="pagination-link" href="#">3</a> </li>
+		<li class="pagination-item"> <a class="pagination-link" href="#">4</a> </li>
+		<li class="pagination-item"> <a class="pagination-link" href="#">5</a> </li>
+		<li class="pagination-item--wide last"> <a class="pagination-link--wide last" href="#">Next</a> </li>
+	</ul>
+</div>
+
+
+<div id="content_page">
+{% for elem in data %}
+	<div class="film_container" id="film">
+	    <h3 id="film_name" class="title">{{ elem.Title }}</h3>
+	    <div class="plot">{{ elem.Plot }}</div>
+	    <div class="actors">{{ elem.Actors }}</div>
+	    <div class="rea">{{ elem.Director }}</div>
+	    <div class="poster"><img id="real_poster" src="{{ elem.Poster }}"/></div>
+	    <div class="time">{{ elem.Runtime }}</div>
+	    <div class="genre">{{ elem.Genre }}</div>
+	    <div class="year">{{ elem.Year }}</div>
+	</div>
+{% endfor %}
+</div>
+
+
+<div class="pagination-container wow zoomIn mar-b-1x" data-wow-duration="0.5s">
+	<ul class="pagination">
+		<li class="pagination-item--wide first"> <a class="pagination-link--wide first" href="#">Previous</a> </li>
+		<li class="pagination-item first-number is-active"> <a class="pagination-link" href="#">1</a> </li>
+		<li class="pagination-item"> <a class="pagination-link" href="#">2</a> </li>
+		<li class="pagination-item "> <a class="pagination-link" href="#">3</a> </li>
+		<li class="pagination-item"> <a class="pagination-link" href="#">4</a> </li>
+		<li class="pagination-item"> <a class="pagination-link" href="#">5</a> </li>
+		<li class="pagination-item--wide last"> <a class="pagination-link--wide last" href="#">Next</a> </li>
+	</ul>
+</div>
+
+{% endblock %}

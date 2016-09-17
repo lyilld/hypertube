@@ -2,7 +2,10 @@ core_homepage:
     path:     /
     defaults: { _controller: CoreBundle:Core:index }
 
-core_video:
-    path: /Video
-    defaults:
-        _controller: CoreBundle:Core:video
+core_movie:
+    path:     /movie
+    defaults: { _controller: CoreBundle:Core:movie }
+
+core_serie:
+    path:     /serie
+    defaults: { _controller: CoreBundle:Core:serie }

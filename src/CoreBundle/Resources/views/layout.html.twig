@@ -1,4 +1,6 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
-{% block body%}
+{% block body %}
 {{ render(controller("FOSUserBundle:Security:LoginBis")) }}
+{% block content %}
+{% endblock %}
 {% endblock %}
