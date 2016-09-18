@@ -6,13 +6,13 @@
 	<form action="{{ path("fos_user_security_check") }}" method="post"  class="sky-form">
 		<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 		<header>Login form
-
+		<img src="{{ asset('/bundles/IMAGE/cross.png') }}" class="close_cross" onclick="display_login();">
 		</header>
 
 		<fieldset>
 			<section>
 				<label for="username" class="input">{{ 'Username'|trans }}
-				<i class="fa fa-user fa-lg place_icon"></i>
+				<i class="fa fa-user fa-lg icon-append"></i>
 				<input type="text" placeholder="Username" id="username" name="_username" value="{{ last_username }}" required="required" />
 				<b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
 				</label>
@@ -20,7 +20,7 @@
 
 			<section>
 				<label class="input" for="password">{{ 'Password'|trans }}
-					<i class="fa fa-lock fa-lg place_icon"></i>
+					<i class="fa fa-lock fa-lg icon-append"></i>
 		    <input placeholder="Password" type="password" id="password" name="_password" required="required" />
 					<b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
 				</label>

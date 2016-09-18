@@ -1,0 +1,51 @@
+<?php
+
+/* UserBundle:Profile:EditEmail.html.twig */
+class __TwigTemplate_48890628b4c7df791d17414a521d77a09a2d2c4698b903f9b7b14b898d6890c8 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = false;
+
+        $this->blocks = array(
+        );
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $__internal_a6587d41e0d73fc0f214e6db940cae6b7fcf93e2770f7bf39e901b41db9c4a85 = $this->env->getExtension("native_profiler");
+        $__internal_a6587d41e0d73fc0f214e6db940cae6b7fcf93e2770f7bf39e901b41db9c4a85->enter($__internal_a6587d41e0d73fc0f214e6db940cae6b7fcf93e2770f7bf39e901b41db9c4a85_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Profile:EditEmail.html.twig"));
+
+        // line 1
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form_Email"]) ? $context["form_Email"] : $this->getContext($context, "form_Email")), 'form_start', array("method" => "post", "action" => $this->env->getExtension('routing')->getPath("edit_email")));
+        echo "
+";
+        // line 2
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form_Email"]) ? $context["form_Email"] : $this->getContext($context, "form_Email")), 'form');
+        echo "
+";
+        
+        $__internal_a6587d41e0d73fc0f214e6db940cae6b7fcf93e2770f7bf39e901b41db9c4a85->leave($__internal_a6587d41e0d73fc0f214e6db940cae6b7fcf93e2770f7bf39e901b41db9c4a85_prof);
+
+    }
+
+    public function getTemplateName()
+    {
+        return "UserBundle:Profile:EditEmail.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  26 => 2,  22 => 1,);
+    }
+}
+/* {{ form_start(form_Email, {'method': 'post', 'action': path('edit_email')}) }}*/
+/* {{ form(form_Email) }}*/
+/* */

@@ -5,11 +5,14 @@ namespace CoreBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\DomCrawler\Crawler;
+use CoreBundle\Entity\OMDb;
 
 class CoreController extends Controller
 {
 	public function movieAction()
 	{
+		$this->Getmovie();
 		$db = $this->getDoctrine()
 		      ->getManager()
 		      ->getRepository('CoreBundle:OMDb');
@@ -60,11 +63,11 @@ class CoreController extends Controller
 	    foreach ($result as $link)
 	    {
     		$date = 1950;
-    		$magnet = strstr($link, 'magnet'); 
+    		$magnet = strstr($link, 'magnet');
     		if ($magnet != NULL)
     		{
 				$resultat = strstr($link, 'dn=');
-				$output = substr($resultat, 3, strpos($resultat, '&'));                
+				$output = substr($resultat, 3, strpos($resultat, '&'));
 				$output = strtr($output, '+', ' ');
 				$output = strtr($output, '.', ' ');
 				$parse = $output;
@@ -94,7 +97,7 @@ class CoreController extends Controller
 							break;
 						$IID = $db->findOneByIdmdb($info->imdbID);
 						if ($IID != NULL )
-						{ 
+						{
 							//echo "deja en BD";
 						}
 						else
@@ -133,7 +136,7 @@ class CoreController extends Controller
 				{
 					break;
 				}
-		    }    
+		    }
 		}
 		$page++;
 	}

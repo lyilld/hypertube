@@ -188,4 +188,9 @@ class User extends BaseUser
     }
 
 
+    public function getId()
+    {
+      return $this->id;
+    }
+
 }

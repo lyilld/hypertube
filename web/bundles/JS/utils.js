@@ -2,15 +2,17 @@ function display_profil_menu()
 {
 	if (document.getElementById("profil_menu").style.opacity == "1")
 	{
+		document.getElementById("babar").src="../../web/bundles/IMAGE/ProParam.png";
 		document.getElementById("profil_menu").style.opacity="0";
 		document.getElementById("profil_menu").style.visibility="hidden";
-		document.getElementById("profil_menu").style.height="0px";
+		document.getElementById("profil_menu").style.top="-200px";
 	}
 	else
 	{
+		document.getElementById("babar").src="../../web/bundles/IMAGE/ProMoin.png";
 		document.getElementById("profil_menu").style.opacity="1";
 		document.getElementById("profil_menu").style.visibility="visible";
-		document.getElementById("profil_menu").style.height="300px";
+		document.getElementById("profil_menu").style.top="0px";
 	}
 }
 
@@ -20,9 +22,10 @@ function display_login()
 	{
 		document.getElementById("login").style.opacity="0";
 		document.getElementById("login").style.visibility="hidden";
+		document.getElementById("babar").src="../../web/bundles/IMAGE/ProParam.png";
 		document.getElementById("profil_menu").style.opacity="0";
 		document.getElementById("profil_menu").style.visibility="hidden";
-		document.getElementById("profil_menu").style.height="0px";
+		document.getElementById("profil_menu").style.top="-200px";
 	}
 	else
 	{
@@ -30,9 +33,10 @@ function display_login()
 		document.getElementById("login").style.visibility="visible";
 		document.getElementById("register").style.opacity="0";
 		document.getElementById("register").style.visibility="hidden";
+		document.getElementById("babar").src="../../web/bundles/IMAGE/ProParam.png";
 		document.getElementById("profil_menu").style.opacity="0";
 		document.getElementById("profil_menu").style.visibility="hidden";
-		document.getElementById("profil_menu").style.height="0px";
+		document.getElementById("profil_menu").style.top="-200px";
 	}
 }
 

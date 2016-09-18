@@ -35,7 +35,7 @@ class ProfileController extends BaseController
           return $this->redirectToRoute('fos_user_profile_show');
       }
 
-      return $this->render('UserBundle:Profile:EditImage.html.twig', array('form' => $form->createView()));
+      return $this->render('UserBundle:Profile:EditImage.html.twig', array('form_Image' => $form->createView()));
   }
 
   public function EditEmailAction(Request $request)
@@ -66,10 +66,10 @@ class ProfileController extends BaseController
 
           return $this->redirectToRoute('fos_user_profile_show');
         }
+
       }
 
-      return $this->render('UserBundle:Profile:EditEmail.html.twig', array('form' => $form->createView()));
-
+      return $this->render('UserBundle:Profile:EditEmail.html.twig', array('form_Email' => $form->createView()));
   }
 }
 

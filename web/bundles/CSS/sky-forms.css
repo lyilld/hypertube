@@ -384,48 +384,6 @@
 	cursor: pointer;
 }
 
-.sky-form [class^="icon-"] {
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-}
-.sky-form .icon-append,
-.sky-form .icon-prepend {
-	position: absolute;
-	top: 5px;
-	width: 29px;
-	height: 29px;
-	font-size: 15px;
-	line-height: 29px;
-	text-align: center;
-}
-.sky-form .icon-append {
-	right: 5px;
-	padding-left: 3px;
-	border-left-width: 1px;
-	border-left-style: solid;
-}
-.sky-form .icon-prepend {
-	left: 5px;
-	padding-right: 3px;
-	border-right-width: 1px;
-	border-right-style: solid;
-}
-.sky-form .input .icon-prepend + input,
-.sky-form .textarea .icon-prepend + textarea {
-	padding-left: 46px;
-}
-.sky-form .input .icon-append + input,
-.sky-form .textarea .icon-append + textarea {
-	padding-right: 46px;
-}
-.sky-form .input .icon-prepend + .icon-append + input,
-.sky-form .textarea .icon-prepend + .icon-append + textarea {
-	padding-left: 46px;
-}
-
-
 /**/
 /* grid */
 /**/

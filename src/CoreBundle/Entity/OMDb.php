@@ -2,6 +2,8 @@
 
 namespace CoreBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * OMDb
  */
@@ -486,4 +488,3 @@ class OMDb
         return $this->magnet;
     }
 }
-
