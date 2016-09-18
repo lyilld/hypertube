@@ -3,7 +3,7 @@
 <div id="login" class="main_form_register">
 	<a><img id="Fb_logo" src=""></a>
 	<a><img id="ecole_logo" src=""></a>
-	<form action="{{ path("fos_user_security_check") }}" method="post"  class="sky-form">
+	<form action="{{ path("fos_user_security_check") }}" method="post"  class="sky-form" id="form1">
 		<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 		<header>Login form
 		<img src="{{ asset('/bundles/IMAGE/cross.png') }}" class="close_cross" onclick="display_login();">
@@ -43,8 +43,105 @@
 
 		</fieldset>
 		<footer>
-			<input class="button" type="submit" id="_submit" name="_submit" value="{{ 'Log In'|trans }}" />
+			<button type="button"  class="button" id="_submit" name="_submit" value="{{ 'Log In'|trans }}"></button>
 			<span onclick="display_register();" class="button button-secondary">Register</span>
 		</footer>
 	</form>
 </div>
+
+<script>
+
+// function Ajaxlogin()
+// {
+//   $.ajax({
+// 		url : $('form').attr( 'action' ),
+// 		type : 'POST',
+// 		data : {
+//             _username: $('#username').val(),
+//             _password: $('#password').val(),
+//             _remember_me: false,
+//             _csrf_token: $('#_csrf_token').val()
+//         },
+// 		dataType    : "json",
+// 	})
+// }
+//
+var test = document.getElementById('_submit');
+
+test.addEventListener("click", function(){
+	var xhr = getXMLHttpRequest();
+
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+			console.log(xhr.responseText);
+			console.log("WESH SA MARCHE");
+		}
+	};
+	console.log("ON ENTRE");
+	// alert('KO');
+	var path = document.getElementById('form1').action
+
+	var user = document.getElementById('username').value
+	var pass = document.getElementById('password').value
+
+	console.log(path);
+	console.log(user);
+	console.log(pass);
+
+	xhr.open("POST", path, true);
+	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	xhr.send("_username=user&_password=pass&_remember_me=false");
+})
+// function Ajaxlogin()
+// {
+//   $.ajax({
+// 		url :  'security_check_route',
+// 		type : 'POST',
+// 		data : $('form').serialize(),
+// 		dataType    : "json",
+// 		success     : function(data, status, object) {
+// 							 console.log( status );
+// 							 console.log( object.responseText );
+// 	 }
+// 	})
+// }
+console.log('script');
+function getXMLHttpRequest() {
+	var xhr = null;
+
+	if (window.XMLHttpRequest || window.ActiveXObject) {
+		if (window.ActiveXObject) {
+			try {
+				xhr = new ActiveXObject("Msxml2.XMLHTTP");
+			} catch(e) {
+				xhr = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+		} else {
+			xhr = new XMLHttpRequest();
+		}
+	} else {
+		alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+		return null;
+	}
+
+	return xhr;
+}
+
+
+// function Ajaxlogin()
+// {
+//   var xhr = getXMLHttpRequest();
+//
+//   xhr.onreadystatechange = function() {
+// 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+// 			console.log(xhr.responseText);
+//       console.log("WESH SA MARCHE");
+// 		}
+// 	};
+//   console.log("ON ENTRE");
+//   alert('KO');
+//   // xhr.open("POST", "http://localhost:8080/hypertube_2/web/app_dev.php/security_check_route", true);
+//   // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+//   // xhr.send("variable1=truc&variable2=bidule");
+// }
+</script>

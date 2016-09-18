@@ -13,11 +13,14 @@ class LoginFailureHandler implements AuthenticationFailureHandlerInterface
   public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
 	{
 
-    $referer_url = $request->headers->get('referer');
 
-    $response = new RedirectResponse($referer_url);
-
-
-		  return $response;
+    // $referer_url = $request->headers->get('referer');
+    //
+    // $response = new RedirectResponse($referer_url);
+// DELETE
+    // $test = "OUI SA MARCGE";
+    // return $test;
+    // return $response;
+		  // return $response;
 	}
 }

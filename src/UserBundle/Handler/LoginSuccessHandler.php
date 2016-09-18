@@ -13,10 +13,23 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
 {
   public function onAuthenticationSuccess(Request $request, TokenInterface $token)
 	{
-			$referer_url = $request->headers->get('referer');
+    if ($request->isXmlHttpRequest())
+    {
+        // $result = array('success' => true);
+        // $response = new Response(json_encode($result));
+        // $response->headers->set('Content-Type', 'application/json');
+// DELETE
+        // $test = "OUI SA MARCGE";
+        // return $test;
+        // return $response;
+    }
 
-			$response = new RedirectResponse($referer_url);
-
-		  return $response;
+			// $referer_url = $request->headers->get('referer');
+      //
+			// $response = new RedirectResponse($referer_url);
+      // DELETE
+      // $test = "OUI SA MARCGE";
+      // return $test;
+      // return $response;
 	}
 }

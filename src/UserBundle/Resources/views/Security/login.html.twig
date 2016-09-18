@@ -28,7 +28,7 @@
 		<header>Login<a id="home" ><span id="text">Back Home </span><i class="fa fa-home"> </i></a></header>
 		<fieldset>
 			<section>
-				<label for="username" class="input">{{ 'Username'|trans }} 
+				<label for="username" class="input">{{ 'Username'|trans }}
 				<i class="fa fa-user fa-lg icon-append"></i>
 				<input type="text" placeholder="Username" id="username" name="_username" value="{{ last_username }}" required="required" />
 				<b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
@@ -47,7 +47,7 @@
 			</section>
 		</fieldset>
 		<footer>
-			<input class="button" type="submit" id="_submit" name="_submit" value="{{ 'Submit'|trans }}" />
+			<button type="button" onclick="Ajaxlogin();" class="button" id="_submit" name="_submit" value="{{ 'Log In'|trans }}"></button>
 		</footer>
 	</form>
 	<img src="{{ asset('/bundles/IMAGE/DarthVader.png') }}" style="position: absolute; top: -300px; width: 600px; height: 357px; z-index: -1; opacity: 0.9;">
@@ -55,3 +55,66 @@
 	<img src="{{ asset('/bundles/IMAGE/r2d2.png') }}" style="position: absolute; top: -138px; left: 0px; width: 120px; height: 150px; z-index: -1; opacity: 0.9;">
 </body>
 </html>
+
+<script>
+// 
+// var test = document.getElementById('_submit');
+//
+// test.addEventListener("click", function(){
+//   alert('KO');
+// })
+// // function Ajaxlogin()
+// // {
+// //   $.ajax({
+// // 		url :  'security_check_route',
+// // 		type : 'POST',
+// // 		data : $('form').serialize(),
+// // 		dataType    : "json",
+// // 		success     : function(data, status, object) {
+// // 							 console.log( status );
+// // 							 console.log( object.responseText );
+// // 	 }
+// // 	})
+// // }
+// console.log('script');
+// function getXMLHttpRequest() {
+// 	var xhr = null;
+//
+// 	if (window.XMLHttpRequest || window.ActiveXObject) {
+// 		if (window.ActiveXObject) {
+// 			try {
+// 				xhr = new ActiveXObject("Msxml2.XMLHTTP");
+// 			} catch(e) {
+// 				xhr = new ActiveXObject("Microsoft.XMLHTTP");
+// 			}
+// 		} else {
+// 			xhr = new XMLHttpRequest();
+// 		}
+// 	} else {
+// 		alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+// 		return null;
+// 	}
+//
+// 	return xhr;
+// }
+//
+//
+// function Ajaxlogin()
+// {
+//   var xhr = getXMLHttpRequest();
+//
+//   xhr.onreadystatechange = function() {
+// 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+// 			console.log(xhr.responseText);
+//       console.log("WESH SA MARCHE");
+// 		}
+// 	};
+//   console.log("ON ENTRE");
+//   alert('KO');
+//   // xhr.open("POST", "http://localhost:8080/hypertube_2/web/app_dev.php/security_check_route", true);
+//   // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+//   // xhr.send("variable1=truc&variable2=bidule");
+}
+
+
+</script>

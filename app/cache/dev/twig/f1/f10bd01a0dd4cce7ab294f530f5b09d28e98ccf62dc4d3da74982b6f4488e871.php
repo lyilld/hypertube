@@ -1,6 +1,6 @@
 <?php
 
-/* FOSUserBundle:Registration:register.html.twig */
+/* UserBundle:Registration:register.html.twig */
 class __TwigTemplate_c7fab99314f44ec85cf0884a51952e8ab5fa4162f7855b65c7aacebfcf98e0bb extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_c7fab99314f44ec85cf0884a51952e8ab5fa4162f7855b65c7aacebfcf9
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b9892b1764d57513892c6d705ea7cddf80eb98ad4c95e871148beb6f2ce75060 = $this->env->getExtension("native_profiler");
-        $__internal_b9892b1764d57513892c6d705ea7cddf80eb98ad4c95e871148beb6f2ce75060->enter($__internal_b9892b1764d57513892c6d705ea7cddf80eb98ad4c95e871148beb6f2ce75060_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Registration:register.html.twig"));
+        $__internal_320d35477f8773948aac1dc583c01bdd49f1cf826d0b08d51aa957f058384f6f = $this->env->getExtension("native_profiler");
+        $__internal_320d35477f8773948aac1dc583c01bdd49f1cf826d0b08d51aa957f058384f6f->enter($__internal_320d35477f8773948aac1dc583c01bdd49f1cf826d0b08d51aa957f058384f6f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Registration:register.html.twig"));
 
         // line 1
         echo "
@@ -216,13 +216,13 @@ class __TwigTemplate_c7fab99314f44ec85cf0884a51952e8ab5fa4162f7855b65c7aacebfcf9
         echo "\" style=\"position: absolute; top: -138px; left: 0px; width: 120px; height: 150px; z-index: -1; opacity: 0.9;\">
   </div>";
         
-        $__internal_b9892b1764d57513892c6d705ea7cddf80eb98ad4c95e871148beb6f2ce75060->leave($__internal_b9892b1764d57513892c6d705ea7cddf80eb98ad4c95e871148beb6f2ce75060_prof);
+        $__internal_320d35477f8773948aac1dc583c01bdd49f1cf826d0b08d51aa957f058384f6f->leave($__internal_320d35477f8773948aac1dc583c01bdd49f1cf826d0b08d51aa957f058384f6f_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "FOSUserBundle:Registration:register.html.twig";
+        return "UserBundle:Registration:register.html.twig";
     }
 
     public function isTraitable()

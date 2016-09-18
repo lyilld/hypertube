@@ -16,8 +16,8 @@ class __TwigTemplate_7a20de53dacbca42e229fa8dfe29c07b7ae92e4ca184f342c14899b6fdf
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_9a1546d5a378d0d8b459aad65c9938418aed940ab0d63d54774385398edc1f39 = $this->env->getExtension("native_profiler");
-        $__internal_9a1546d5a378d0d8b459aad65c9938418aed940ab0d63d54774385398edc1f39->enter($__internal_9a1546d5a378d0d8b459aad65c9938418aed940ab0d63d54774385398edc1f39_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Profile:show_content.html.twig"));
+        $__internal_d603d16bcc3a1906ff595065e776f22c2f250390ea28e18d5ad597e60152a7ec = $this->env->getExtension("native_profiler");
+        $__internal_d603d16bcc3a1906ff595065e776f22c2f250390ea28e18d5ad597e60152a7ec->enter($__internal_d603d16bcc3a1906ff595065e776f22c2f250390ea28e18d5ad597e60152a7ec_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Profile:show_content.html.twig"));
 
         // line 1
         echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("FOSUserBundle:Profile:EditImage"));
@@ -34,14 +34,14 @@ class __TwigTemplate_7a20de53dacbca42e229fa8dfe29c07b7ae92e4ca184f342c14899b6fdf
         // line 4
         $this->displayBlock('body', $context, $blocks);
         
-        $__internal_9a1546d5a378d0d8b459aad65c9938418aed940ab0d63d54774385398edc1f39->leave($__internal_9a1546d5a378d0d8b459aad65c9938418aed940ab0d63d54774385398edc1f39_prof);
+        $__internal_d603d16bcc3a1906ff595065e776f22c2f250390ea28e18d5ad597e60152a7ec->leave($__internal_d603d16bcc3a1906ff595065e776f22c2f250390ea28e18d5ad597e60152a7ec_prof);
 
     }
 
     public function block_body($context, array $blocks = array())
     {
-        $__internal_47bb08fe9a891046aa4b07628427d87772fe125763118915513c7776595ccd40 = $this->env->getExtension("native_profiler");
-        $__internal_47bb08fe9a891046aa4b07628427d87772fe125763118915513c7776595ccd40->enter($__internal_47bb08fe9a891046aa4b07628427d87772fe125763118915513c7776595ccd40_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_4587c84aa498fd5b78dd0b79e1644e7002d4ac5f9ef1241c213b53373845865a = $this->env->getExtension("native_profiler");
+        $__internal_4587c84aa498fd5b78dd0b79e1644e7002d4ac5f9ef1241c213b53373845865a->enter($__internal_4587c84aa498fd5b78dd0b79e1644e7002d4ac5f9ef1241c213b53373845865a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 5
         echo "Bienvenue sur votre profile ";
@@ -60,7 +60,7 @@ Historique des dernier film regardé: </br>
 
 ";
         
-        $__internal_47bb08fe9a891046aa4b07628427d87772fe125763118915513c7776595ccd40->leave($__internal_47bb08fe9a891046aa4b07628427d87772fe125763118915513c7776595ccd40_prof);
+        $__internal_4587c84aa498fd5b78dd0b79e1644e7002d4ac5f9ef1241c213b53373845865a->leave($__internal_4587c84aa498fd5b78dd0b79e1644e7002d4ac5f9ef1241c213b53373845865a_prof);
 
     }
 

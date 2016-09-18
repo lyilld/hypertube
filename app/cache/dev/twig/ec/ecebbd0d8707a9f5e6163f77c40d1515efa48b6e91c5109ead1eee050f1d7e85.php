@@ -1,6 +1,6 @@
 <?php
 
-/* FOSUserBundle:Security:login.html.twig */
+/* UserBundle:Security:login.html.twig */
 class __TwigTemplate_0a9f9092aeb0410c29984b63d5c9b0be067c7234a6e9be6775324211149eb070 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_0a9f9092aeb0410c29984b63d5c9b0be067c7234a6e9be6775324211149
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_01c130c79afe95c2e07415c8d43f6cd5c4b18b338c5800e435b1dc6c8559a5c7 = $this->env->getExtension("native_profiler");
-        $__internal_01c130c79afe95c2e07415c8d43f6cd5c4b18b338c5800e435b1dc6c8559a5c7->enter($__internal_01c130c79afe95c2e07415c8d43f6cd5c4b18b338c5800e435b1dc6c8559a5c7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login.html.twig"));
+        $__internal_040280e8b4dff1172265dfd5ef459432109fef6c640bed0c88facac9eff770b3 = $this->env->getExtension("native_profiler");
+        $__internal_040280e8b4dff1172265dfd5ef459432109fef6c640bed0c88facac9eff770b3->enter($__internal_040280e8b4dff1172265dfd5ef459432109fef6c640bed0c88facac9eff770b3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Security:login.html.twig"));
 
         // line 1
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
@@ -87,7 +87,7 @@ class __TwigTemplate_0a9f9092aeb0410c29984b63d5c9b0be067c7234a6e9be6775324211149
 \t\t\t\t<label for=\"username\" class=\"input\">";
         // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Username"), "html", null, true);
-        echo " 
+        echo "
 \t\t\t\t<i class=\"fa fa-user fa-lg icon-append\"></i>
 \t\t\t\t<input type=\"text\" placeholder=\"Username\" id=\"username\" name=\"_username\" value=\"";
         // line 33
@@ -112,10 +112,10 @@ class __TwigTemplate_0a9f9092aeb0410c29984b63d5c9b0be067c7234a6e9be6775324211149
 \t\t\t</section>
 \t\t</fieldset>
 \t\t<footer>
-\t\t\t<input class=\"button\" type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
+\t\t\t<button type=\"button\" onclick=\"Ajaxlogin();\" class=\"button\" id=\"_submit\" name=\"_submit\" value=\"";
         // line 50
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Submit"), "html", null, true);
-        echo "\" />
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Log In"), "html", null, true);
+        echo "\"></button>
 \t\t</footer>
 \t</form>
 \t<img src=\"";
@@ -131,15 +131,79 @@ class __TwigTemplate_0a9f9092aeb0410c29984b63d5c9b0be067c7234a6e9be6775324211149
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("/bundles/IMAGE/r2d2.png"), "html", null, true);
         echo "\" style=\"position: absolute; top: -138px; left: 0px; width: 120px; height: 150px; z-index: -1; opacity: 0.9;\">
 </body>
-</html>";
+</html>
+
+<script>
+// 
+// var test = document.getElementById('_submit');
+//
+// test.addEventListener(\"click\", function(){
+//   alert('KO');
+// })
+// // function Ajaxlogin()
+// // {
+// //   \$.ajax({
+// // \t\turl :  'security_check_route',
+// // \t\ttype : 'POST',
+// // \t\tdata : \$('form').serialize(),
+// // \t\tdataType    : \"json\",
+// // \t\tsuccess     : function(data, status, object) {
+// // \t\t\t\t\t\t\t console.log( status );
+// // \t\t\t\t\t\t\t console.log( object.responseText );
+// // \t }
+// // \t})
+// // }
+// console.log('script');
+// function getXMLHttpRequest() {
+// \tvar xhr = null;
+//
+// \tif (window.XMLHttpRequest || window.ActiveXObject) {
+// \t\tif (window.ActiveXObject) {
+// \t\t\ttry {
+// \t\t\t\txhr = new ActiveXObject(\"Msxml2.XMLHTTP\");
+// \t\t\t} catch(e) {
+// \t\t\t\txhr = new ActiveXObject(\"Microsoft.XMLHTTP\");
+// \t\t\t}
+// \t\t} else {
+// \t\t\txhr = new XMLHttpRequest();
+// \t\t}
+// \t} else {
+// \t\talert(\"Votre navigateur ne supporte pas l'objet XMLHTTPRequest...\");
+// \t\treturn null;
+// \t}
+//
+// \treturn xhr;
+// }
+//
+//
+// function Ajaxlogin()
+// {
+//   var xhr = getXMLHttpRequest();
+//
+//   xhr.onreadystatechange = function() {
+// \t\tif (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+// \t\t\tconsole.log(xhr.responseText);
+//       console.log(\"WESH SA MARCHE\");
+// \t\t}
+// \t};
+//   console.log(\"ON ENTRE\");
+//   alert('KO');
+//   // xhr.open(\"POST\", \"http://localhost:8080/hypertube_2/web/app_dev.php/security_check_route\", true);
+//   // xhr.setRequestHeader(\"Content-Type\", \"application/x-www-form-urlencoded\");
+//   // xhr.send(\"variable1=truc&variable2=bidule\");
+}
+
+
+</script>
+";
         
-        $__internal_01c130c79afe95c2e07415c8d43f6cd5c4b18b338c5800e435b1dc6c8559a5c7->leave($__internal_01c130c79afe95c2e07415c8d43f6cd5c4b18b338c5800e435b1dc6c8559a5c7_prof);
+        $__internal_040280e8b4dff1172265dfd5ef459432109fef6c640bed0c88facac9eff770b3->leave($__internal_040280e8b4dff1172265dfd5ef459432109fef6c640bed0c88facac9eff770b3_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "FOSUserBundle:Security:login.html.twig";
+        return "UserBundle:Security:login.html.twig";
     }
 
     public function isTraitable()
@@ -182,7 +246,7 @@ class __TwigTemplate_0a9f9092aeb0410c29984b63d5c9b0be067c7234a6e9be6775324211149
 /* 		<header>Login<a id="home" ><span id="text">Back Home </span><i class="fa fa-home"> </i></a></header>*/
 /* 		<fieldset>*/
 /* 			<section>*/
-/* 				<label for="username" class="input">{{ 'Username'|trans }} */
+/* 				<label for="username" class="input">{{ 'Username'|trans }}*/
 /* 				<i class="fa fa-user fa-lg icon-append"></i>*/
 /* 				<input type="text" placeholder="Username" id="username" name="_username" value="{{ last_username }}" required="required" />*/
 /* 				<b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>*/
@@ -201,7 +265,7 @@ class __TwigTemplate_0a9f9092aeb0410c29984b63d5c9b0be067c7234a6e9be6775324211149
 /* 			</section>*/
 /* 		</fieldset>*/
 /* 		<footer>*/
-/* 			<input class="button" type="submit" id="_submit" name="_submit" value="{{ 'Submit'|trans }}" />*/
+/* 			<button type="button" onclick="Ajaxlogin();" class="button" id="_submit" name="_submit" value="{{ 'Log In'|trans }}"></button>*/
 /* 		</footer>*/
 /* 	</form>*/
 /* 	<img src="{{ asset('/bundles/IMAGE/DarthVader.png') }}" style="position: absolute; top: -300px; width: 600px; height: 357px; z-index: -1; opacity: 0.9;">*/
@@ -209,3 +273,67 @@ class __TwigTemplate_0a9f9092aeb0410c29984b63d5c9b0be067c7234a6e9be6775324211149
 /* 	<img src="{{ asset('/bundles/IMAGE/r2d2.png') }}" style="position: absolute; top: -138px; left: 0px; width: 120px; height: 150px; z-index: -1; opacity: 0.9;">*/
 /* </body>*/
 /* </html>*/
+/* */
+/* <script>*/
+/* // */
+/* // var test = document.getElementById('_submit');*/
+/* //*/
+/* // test.addEventListener("click", function(){*/
+/* //   alert('KO');*/
+/* // })*/
+/* // // function Ajaxlogin()*/
+/* // // {*/
+/* // //   $.ajax({*/
+/* // // 		url :  'security_check_route',*/
+/* // // 		type : 'POST',*/
+/* // // 		data : $('form').serialize(),*/
+/* // // 		dataType    : "json",*/
+/* // // 		success     : function(data, status, object) {*/
+/* // // 							 console.log( status );*/
+/* // // 							 console.log( object.responseText );*/
+/* // // 	 }*/
+/* // // 	})*/
+/* // // }*/
+/* // console.log('script');*/
+/* // function getXMLHttpRequest() {*/
+/* // 	var xhr = null;*/
+/* //*/
+/* // 	if (window.XMLHttpRequest || window.ActiveXObject) {*/
+/* // 		if (window.ActiveXObject) {*/
+/* // 			try {*/
+/* // 				xhr = new ActiveXObject("Msxml2.XMLHTTP");*/
+/* // 			} catch(e) {*/
+/* // 				xhr = new ActiveXObject("Microsoft.XMLHTTP");*/
+/* // 			}*/
+/* // 		} else {*/
+/* // 			xhr = new XMLHttpRequest();*/
+/* // 		}*/
+/* // 	} else {*/
+/* // 		alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");*/
+/* // 		return null;*/
+/* // 	}*/
+/* //*/
+/* // 	return xhr;*/
+/* // }*/
+/* //*/
+/* //*/
+/* // function Ajaxlogin()*/
+/* // {*/
+/* //   var xhr = getXMLHttpRequest();*/
+/* //*/
+/* //   xhr.onreadystatechange = function() {*/
+/* // 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {*/
+/* // 			console.log(xhr.responseText);*/
+/* //       console.log("WESH SA MARCHE");*/
+/* // 		}*/
+/* // 	};*/
+/* //   console.log("ON ENTRE");*/
+/* //   alert('KO');*/
+/* //   // xhr.open("POST", "http://localhost:8080/hypertube_2/web/app_dev.php/security_check_route", true);*/
+/* //   // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");*/
+/* //   // xhr.send("variable1=truc&variable2=bidule");*/
+/* }*/
+/* */
+/* */
+/* </script>*/
+/* */
