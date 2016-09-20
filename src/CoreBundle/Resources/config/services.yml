@@ -1,0 +1,3 @@
+services:
+    core.filter:
+        class: CoreBundle\Services\filter

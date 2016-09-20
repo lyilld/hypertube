@@ -1,0 +1,14 @@
+{{ render(controller("FOSUserBundle:Profile:EditImage")) }}
+{{ render(controller("FOSUserBundle:Profile:EditEmail")) }}
+{{ render(controller("FOSUserBundle:ChangePassword:ChangePassword")) }}
+{% block body %}
+Bienvenue sur votre profile {{ user.username }} </br>
+<img class='img_profile' src="../../../{{ user.image }}"> </br>
+<a href="Edit"> Edite ton profile</a> </br>
+Vous êtes inscrit depuis le : </br>
+nombre de film visonnés: </br>
+nombre d'heure de visionage: </br>
+Votre liste de film en favoris: </br>
+Historique des dernier film regardé: </br>
+
+{% endblock %}

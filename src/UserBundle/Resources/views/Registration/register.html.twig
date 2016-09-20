@@ -1,0 +1,107 @@
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{ asset('/bundles/CSS/layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/CSS/pagination.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/CSS/sky-forms.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/CSS/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/CSS/styles.css') }}">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="icon" type="image/png" href="{{ asset('/bundles/IMAGE/iconHT.png') }}">
+	<title>Log-me in</title>
+	<style>html, body{background-color: white;}</style>
+</head>
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div id="oops_login" class="main_form_register">
+<img src="{{ asset('/bundles/IMAGE/teamavengers.png') }}" style="position: absolute; left: 600px; width: 450px; height: 357px; z-index: -1;">
+	<img src="{{ asset('/bundles/IMAGE/teamxmen.png') }}" style="position: absolute; right: 600px; width: 450px; height: 357px; z-index: -1;">
+	<div style="position: absolute; bottom: -420px; left: 0px; width: 600px; height: 70px; font-family: geo; background-color: rgba(231, 76, 60, 0.8); box-shadow: 0px 0px 10px rgba(231, 76, 60,1.0) inset, 0px 0px 10px rgba(192, 57, 43,1.0); text-align: center; font-size: 2em; padding-top: 10px;"> Oops.. Something wrong ? </div>
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'sky-form'}}) }}
+{{ form_errors(form) }}
+{# Pour changer les messages d'erreurs de username/email/password
+il faut aller dans le fichier vendor/friendsofsymfony/ressources/config/validation.xml #}
+{# Pour changer les messages d'erreurs de firstname/lastname/image
+il faut aller dans le fichier src/UserBundle/Entiry/User.php #}
+
+{{ form_row(form._token) }}
+  <header>Registration form
+  <a id="home" ><span id="text">Back Home </span><i class="fa fa-home"> </i></a>
+  </header>
+  <fieldset>
+    <section>
+      <label class="input">
+        <i class="fa fa-user fa-lg icon-prepend"></i>
+        {{ form_errors(form.username) }}
+        {{ form_widget(form.username, {'attr': {'placeholder': 'Username'}}) }}
+        <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+      </label>
+    </section>
+
+    <section>
+      <label class="input">
+        <i class="fa fa-envelope-o fa-lg icon-prepend"></i>
+        {{ form_errors(form.email) }}
+        {{ form_widget(form.email, {'attr': {'placeholder': 'Email Adresse'}}) }}
+        <b class="tooltip tooltip-bottom-right">Needed to verify your account</b>
+      </label>
+    </section>
+
+    <section>
+      <label class="input">
+        <i class="fa fa-lock fa-lg icon-prepend"></i>
+        {{ form_errors(form.plainPassword.first) }}
+        {{ form_widget(form.plainPassword.first, {'attr': {'placeholder': 'Password'}}) }}
+        <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+      </label>
+    </section>
+
+    <section>
+      <label class="input">
+        <i class="fa fa-lock fa-lg icon-prepend"></i>
+        {{ form_errors(form.plainPassword.second) }}
+        {{ form_widget(form.plainPassword.second, {'attr': {'placeholder': 'Confirm Password'}}) }}
+        <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+      </label>
+    </section>
+  </fieldset>
+  <fieldset>
+    <div class="row">
+      <section class="col col-6">
+        <label class="input">
+          <i class="fa fa-lock fa-lg icon-prepend"></i>
+          {{ form_errors(form.firstname) }}
+          {{ form_widget(form.firstname, {'attr': {'placeholder': 'FirstName'}}) }}
+          <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+        </label>
+      </section>
+      <section class="col col-6">
+        <label class="input">
+          <i class="fa fa-lock fa-lg icon-prepend"></i>
+          {{ form_errors(form.lastname) }}
+          {{ form_widget(form.lastname, {'attr': {'placeholder': 'LastName'}}) }}
+          <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+        </label>
+      </section>
+      <section class="col col-6">
+        <label class="input">
+          <i class="fa fa-lock fa-lg icon-prepend"></i>
+          {{ form_errors(form.image) }}
+          {{ form_widget(form.image, {'attr': {'placeholder': 'LastName'}}) }}
+          <b class="tooltip tooltip-bottom-right">Only latin characters and numbers</b>
+        </label>
+      </section>
+    </div>
+    <section>
+      <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>I agree to the Terms of Service</label>
+    </section>
+  </fieldset>
+  <footer>
+     <input type="submit" class="button" value="{{ 'Submit'|trans }}" />
+  </footer>
+  {{ form_end(form) }}
+  <img src="{{ asset('/bundles/IMAGE/DarthVader.png') }}" style="position: absolute; top: -300px; width: 600px; height: 357px; z-index: -1; opacity: 0.9;">
+	<img src="{{ asset('/bundles/IMAGE/bb8.png') }}" style="position: absolute; top: -88px; right: 0px; width: 100px; height: 100px; z-index: -1; opacity: 0.9;">
+	<img src="{{ asset('/bundles/IMAGE/r2d2.png') }}" style="position: absolute; top: -138px; left: 0px; width: 120px; height: 150px; z-index: -1; opacity: 0.9;">
+  </div>
