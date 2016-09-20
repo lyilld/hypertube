@@ -40,6 +40,16 @@
 		</div>
 	</div>
 	<div id="player_content">
+		{#Deplacer le link et le script au bonne endroit#}
+		{#----------#}
+		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/azinevideojs/css/video-js.css') }}" />
+		<script type="text/javascript" src="{{ asset('bundles/azinevideojs/js/video.min.js') }}"></script>
+		{#----------#}
+		<video id="my_video_1" class="video-js vjs-default-skin" width="800px" height="400px"
+			   controls preload="none" poster='http://video-js.zencoder.com/oceans-clip.jpg'
+			   data-setup='{ "aspectRatio":"16:9", "playbackRates": [1, 1.5, 2] }'>
+			<source src="http://vjs.zencdn.net/v/oceans.webm" type='video/webm' />
+		</video>
 	</div>
 </div>
 
