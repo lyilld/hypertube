@@ -1,3 +1,0 @@
-ab9a43,127.0.0.1,GET,http://localhost:8080/FFFAITFUMER/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ARegistration%253AMyRegister,1474410900,8946e5,200
-8946e5,127.0.0.1,GET,http://localhost:8080/FFFAITFUMER/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ASecurity%253ALoginBis,1474410900,43a1b3,200
-43a1b3,::1,GET,http://localhost:8080/FFFAITFUMER/web/app_dev.php/,1474410900,,200
