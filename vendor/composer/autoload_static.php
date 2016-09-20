@@ -238,6 +238,10 @@ class ComposerStaticInit074a41f121ce3b8a67929fbfd1d6709c
             array (
                 0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
             ),
+            'Divi\\AjaxLoginBundle' => 
+            array (
+                0 => __DIR__ . '/..' . '/divi/ajax-login-bundle',
+            ),
         ),
     );
 

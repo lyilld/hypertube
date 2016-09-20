@@ -1,0 +1,12 @@
+a7938c,127.0.0.1,GET,http://localhost:8080/hypertube_2/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ARegistration%253AMyRegister,1474403092,ce5d8f,200
+ce5d8f,127.0.0.1,GET,http://localhost:8080/hypertube_2/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ASecurity%253ALoginBis,1474403093,2f2146,200
+2f2146,::1,GET,http://localhost:8080/hypertube_2/web/app_dev.php/stream,1474403093,,200
+10c1b9,127.0.0.1,GET,http://localhost:8080/hypertube_2/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ARegistration%253AMyRegister,1474403190,423d0a,200
+423d0a,127.0.0.1,GET,http://localhost:8080/hypertube_2/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ASecurity%253ALoginBis,1474403190,915139,200
+915139,::1,GET,http://localhost:8080/hypertube_2/web/app_dev.php/,1474403190,,200
+57394b,127.0.0.1,GET,http://localhost:8080/hypertube_2/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ARegistration%253AMyRegister,1474403369,ca6813,200
+ca6813,127.0.0.1,GET,http://localhost:8080/hypertube_2/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ASecurity%253ALoginBis,1474403369,0a9cb0,200
+0a9cb0,::1,GET,http://localhost:8080/hypertube_2/web/app_dev.php/,1474403369,,200
+6b058a,127.0.0.1,GET,http://localhost:8080/hypertube_2/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ARegistration%253AMyRegister,1474403376,a91e73,200
+a91e73,127.0.0.1,GET,http://localhost:8080/hypertube_2/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ASecurity%253ALoginBis,1474403376,4f7bac,200
+4f7bac,::1,GET,http://localhost:8080/hypertube_2/web/app_dev.php/stream,1474403376,,200

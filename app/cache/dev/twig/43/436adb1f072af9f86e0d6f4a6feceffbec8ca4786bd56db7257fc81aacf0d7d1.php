@@ -1,6 +1,6 @@
 <?php
 
-/* UserBundle:Security:login_content.html.twig */
+/* FOSUserBundle:Security:login_content.html.twig */
 class __TwigTemplate_e6e258621e23859f2436d566647573b4356a57983912214994b63ca4b5df53bf extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,20 +15,23 @@ class __TwigTemplate_e6e258621e23859f2436d566647573b4356a57983912214994b63ca4b5d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_8c01975cf2e379b80bea015508393c69804fcef5f144cf52841c3705ad64dcd0 = $this->env->getExtension("native_profiler");
-        $__internal_8c01975cf2e379b80bea015508393c69804fcef5f144cf52841c3705ad64dcd0->enter($__internal_8c01975cf2e379b80bea015508393c69804fcef5f144cf52841c3705ad64dcd0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Security:login_content.html.twig"));
+        $__internal_5485516924e35f679b2730064f48cfa187c766a2114eb8f4577538719f57702e = $this->env->getExtension("native_profiler");
+        $__internal_5485516924e35f679b2730064f48cfa187c766a2114eb8f4577538719f57702e->enter($__internal_5485516924e35f679b2730064f48cfa187c766a2114eb8f4577538719f57702e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login_content.html.twig"));
 
         // line 1
         echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("FOSUserBundle:Registration:MyRegister"));
         echo "
-
-<div id=\"login\" class=\"main_form_register\">
+";
+        // line 2
+        $this->loadTemplate("DiviAjaxLoginBundle:Javascript:init.html.twig", "FOSUserBundle:Security:login_content.html.twig", 2)->display(array_merge($context, array("form_selector" => "#form-login")));
+        // line 3
+        echo "<div id=\"login\" class=\"main_form_register\">
 \t<a><img id=\"Fb_logo\" src=\"\"></a>
 \t<a><img id=\"ecole_logo\" src=\"\"></a>
 \t<form action=\"";
         // line 6
         echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
-        echo "\" method=\"post\"  class=\"sky-form\" id=\"form1\">
+        echo "\" method=\"post\"  class=\"sky-form\" id=\"form-login\">
 \t\t<input type=\"hidden\" name=\"_csrf_token\" value=\"";
         // line 7
         echo twig_escape_filter($this->env, (isset($context["csrf_token"]) ? $context["csrf_token"] : $this->getContext($context, "csrf_token")), "html", null, true);
@@ -86,120 +89,23 @@ class __TwigTemplate_e6e258621e23859f2436d566647573b4356a57983912214994b63ca4b5d
 
 \t\t</fieldset>
 \t\t<footer>
-\t\t\t<button type=\"button\"  class=\"button\" id=\"_submit\" name=\"_submit\" value=\"";
+ <input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
         // line 46
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Log In"), "html", null, true);
-        echo "\"></button>
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.submit", array(), "FOSUserBundle"), "html", null, true);
+        echo "\" />
 \t\t\t<span onclick=\"display_register();\" class=\"button button-secondary\">Register</span>
 \t\t</footer>
 \t</form>
 </div>
-
-<script>
-
-// function Ajaxlogin()
-// {
-//   \$.ajax({
-// \t\turl : \$('form').attr( 'action' ),
-// \t\ttype : 'POST',
-// \t\tdata : {
-//             _username: \$('#username').val(),
-//             _password: \$('#password').val(),
-//             _remember_me: false,
-//             _csrf_token: \$('#_csrf_token').val()
-//         },
-// \t\tdataType    : \"json\",
-// \t})
-// }
-//
-var test = document.getElementById('_submit');
-
-test.addEventListener(\"click\", function(){
-\tvar xhr = getXMLHttpRequest();
-
-\txhr.onreadystatechange = function() {
-\t\tif (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-\t\t\tconsole.log(xhr.responseText);
-\t\t\tconsole.log(\"WESH SA MARCHE\");
-\t\t}
-\t};
-\tconsole.log(\"ON ENTRE\");
-\t// alert('KO');
-\tvar path = document.getElementById('form1').action
-
-\tvar user = document.getElementById('username').value
-\tvar pass = document.getElementById('password').value
-
-\tconsole.log(path);
-\tconsole.log(user);
-\tconsole.log(pass);
-
-\txhr.open(\"POST\", path, true);
-\txhr.setRequestHeader(\"Content-Type\", \"application/x-www-form-urlencoded\");
-\txhr.send(\"_username=user&_password=pass&_remember_me=false\");
-})
-// function Ajaxlogin()
-// {
-//   \$.ajax({
-// \t\turl :  'security_check_route',
-// \t\ttype : 'POST',
-// \t\tdata : \$('form').serialize(),
-// \t\tdataType    : \"json\",
-// \t\tsuccess     : function(data, status, object) {
-// \t\t\t\t\t\t\t console.log( status );
-// \t\t\t\t\t\t\t console.log( object.responseText );
-// \t }
-// \t})
-// }
-console.log('script');
-function getXMLHttpRequest() {
-\tvar xhr = null;
-
-\tif (window.XMLHttpRequest || window.ActiveXObject) {
-\t\tif (window.ActiveXObject) {
-\t\t\ttry {
-\t\t\t\txhr = new ActiveXObject(\"Msxml2.XMLHTTP\");
-\t\t\t} catch(e) {
-\t\t\t\txhr = new ActiveXObject(\"Microsoft.XMLHTTP\");
-\t\t\t}
-\t\t} else {
-\t\t\txhr = new XMLHttpRequest();
-\t\t}
-\t} else {
-\t\talert(\"Votre navigateur ne supporte pas l'objet XMLHTTPRequest...\");
-\t\treturn null;
-\t}
-
-\treturn xhr;
-}
-
-
-// function Ajaxlogin()
-// {
-//   var xhr = getXMLHttpRequest();
-//
-//   xhr.onreadystatechange = function() {
-// \t\tif (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-// \t\t\tconsole.log(xhr.responseText);
-//       console.log(\"WESH SA MARCHE\");
-// \t\t}
-// \t};
-//   console.log(\"ON ENTRE\");
-//   alert('KO');
-//   // xhr.open(\"POST\", \"http://localhost:8080/hypertube_2/web/app_dev.php/security_check_route\", true);
-//   // xhr.setRequestHeader(\"Content-Type\", \"application/x-www-form-urlencoded\");
-//   // xhr.send(\"variable1=truc&variable2=bidule\");
-// }
-</script>
 ";
         
-        $__internal_8c01975cf2e379b80bea015508393c69804fcef5f144cf52841c3705ad64dcd0->leave($__internal_8c01975cf2e379b80bea015508393c69804fcef5f144cf52841c3705ad64dcd0_prof);
+        $__internal_5485516924e35f679b2730064f48cfa187c766a2114eb8f4577538719f57702e->leave($__internal_5485516924e35f679b2730064f48cfa187c766a2114eb8f4577538719f57702e_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "UserBundle:Security:login_content.html.twig";
+        return "FOSUserBundle:Security:login_content.html.twig";
     }
 
     public function isTraitable()
@@ -209,15 +115,15 @@ function getXMLHttpRequest() {
 
     public function getDebugInfo()
     {
-        return array (  91 => 46,  75 => 33,  61 => 22,  52 => 16,  47 => 14,  39 => 9,  34 => 7,  30 => 6,  22 => 1,);
+        return array (  94 => 46,  78 => 33,  64 => 22,  55 => 16,  50 => 14,  42 => 9,  37 => 7,  33 => 6,  28 => 3,  26 => 2,  22 => 1,);
     }
 }
 /* {{ render(controller("FOSUserBundle:Registration:MyRegister")) }}*/
-/* */
+/* {% include 'DiviAjaxLoginBundle:Javascript:init.html.twig' with {'form_selector': '#form-login'} %}*/
 /* <div id="login" class="main_form_register">*/
 /* 	<a><img id="Fb_logo" src=""></a>*/
 /* 	<a><img id="ecole_logo" src=""></a>*/
-/* 	<form action="{{ path("fos_user_security_check") }}" method="post"  class="sky-form" id="form1">*/
+/* 	<form action="{{ path("fos_user_security_check") }}" method="post"  class="sky-form" id="form-login">*/
 /* 		<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />*/
 /* 		<header>Login form*/
 /* 		<img src="{{ asset('/bundles/IMAGE/cross.png') }}" class="close_cross" onclick="display_login();">*/
@@ -257,106 +163,9 @@ function getXMLHttpRequest() {
 /* */
 /* 		</fieldset>*/
 /* 		<footer>*/
-/* 			<button type="button"  class="button" id="_submit" name="_submit" value="{{ 'Log In'|trans }}"></button>*/
+/*  <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />*/
 /* 			<span onclick="display_register();" class="button button-secondary">Register</span>*/
 /* 		</footer>*/
 /* 	</form>*/
 /* </div>*/
-/* */
-/* <script>*/
-/* */
-/* // function Ajaxlogin()*/
-/* // {*/
-/* //   $.ajax({*/
-/* // 		url : $('form').attr( 'action' ),*/
-/* // 		type : 'POST',*/
-/* // 		data : {*/
-/* //             _username: $('#username').val(),*/
-/* //             _password: $('#password').val(),*/
-/* //             _remember_me: false,*/
-/* //             _csrf_token: $('#_csrf_token').val()*/
-/* //         },*/
-/* // 		dataType    : "json",*/
-/* // 	})*/
-/* // }*/
-/* //*/
-/* var test = document.getElementById('_submit');*/
-/* */
-/* test.addEventListener("click", function(){*/
-/* 	var xhr = getXMLHttpRequest();*/
-/* */
-/* 	xhr.onreadystatechange = function() {*/
-/* 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {*/
-/* 			console.log(xhr.responseText);*/
-/* 			console.log("WESH SA MARCHE");*/
-/* 		}*/
-/* 	};*/
-/* 	console.log("ON ENTRE");*/
-/* 	// alert('KO');*/
-/* 	var path = document.getElementById('form1').action*/
-/* */
-/* 	var user = document.getElementById('username').value*/
-/* 	var pass = document.getElementById('password').value*/
-/* */
-/* 	console.log(path);*/
-/* 	console.log(user);*/
-/* 	console.log(pass);*/
-/* */
-/* 	xhr.open("POST", path, true);*/
-/* 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");*/
-/* 	xhr.send("_username=user&_password=pass&_remember_me=false");*/
-/* })*/
-/* // function Ajaxlogin()*/
-/* // {*/
-/* //   $.ajax({*/
-/* // 		url :  'security_check_route',*/
-/* // 		type : 'POST',*/
-/* // 		data : $('form').serialize(),*/
-/* // 		dataType    : "json",*/
-/* // 		success     : function(data, status, object) {*/
-/* // 							 console.log( status );*/
-/* // 							 console.log( object.responseText );*/
-/* // 	 }*/
-/* // 	})*/
-/* // }*/
-/* console.log('script');*/
-/* function getXMLHttpRequest() {*/
-/* 	var xhr = null;*/
-/* */
-/* 	if (window.XMLHttpRequest || window.ActiveXObject) {*/
-/* 		if (window.ActiveXObject) {*/
-/* 			try {*/
-/* 				xhr = new ActiveXObject("Msxml2.XMLHTTP");*/
-/* 			} catch(e) {*/
-/* 				xhr = new ActiveXObject("Microsoft.XMLHTTP");*/
-/* 			}*/
-/* 		} else {*/
-/* 			xhr = new XMLHttpRequest();*/
-/* 		}*/
-/* 	} else {*/
-/* 		alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");*/
-/* 		return null;*/
-/* 	}*/
-/* */
-/* 	return xhr;*/
-/* }*/
-/* */
-/* */
-/* // function Ajaxlogin()*/
-/* // {*/
-/* //   var xhr = getXMLHttpRequest();*/
-/* //*/
-/* //   xhr.onreadystatechange = function() {*/
-/* // 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {*/
-/* // 			console.log(xhr.responseText);*/
-/* //       console.log("WESH SA MARCHE");*/
-/* // 		}*/
-/* // 	};*/
-/* //   console.log("ON ENTRE");*/
-/* //   alert('KO');*/
-/* //   // xhr.open("POST", "http://localhost:8080/hypertube_2/web/app_dev.php/security_check_route", true);*/
-/* //   // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");*/
-/* //   // xhr.send("variable1=truc&variable2=bidule");*/
-/* // }*/
-/* </script>*/
 /* */

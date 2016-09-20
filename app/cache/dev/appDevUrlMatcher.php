@@ -119,9 +119,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'CoreBundle\\Controller\\CoreController::movieAction',  '_route' => 'core_movie',);
         }
 
-        // core_serie
-        if ($pathinfo === '/serie') {
-            return array (  '_controller' => 'CoreBundle\\Controller\\CoreController::serieAction',  '_route' => 'core_serie',);
+        if (0 === strpos($pathinfo, '/s')) {
+            // core_serie
+            if ($pathinfo === '/serie') {
+                return array (  '_controller' => 'CoreBundle\\Controller\\CoreController::serieAction',  '_route' => 'core_serie',);
+            }
+
+            // core_stream
+            if ($pathinfo === '/stream') {
+                return array (  '_controller' => 'CoreBundle\\Controller\\CoreController::streamAction',  '_route' => 'core_stream',);
+            }
+
         }
 
         // user_homepage

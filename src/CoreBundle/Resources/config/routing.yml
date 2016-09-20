@@ -9,3 +9,7 @@ core_movie:
 core_serie:
     path:     /serie
     defaults: { _controller: CoreBundle:Core:serie }
+
+core_stream:
+    path:     /stream
+    defaults: { _controller: CoreBundle:Core:stream }

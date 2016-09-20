@@ -10,19 +10,52 @@ use CoreBundle\Entity\OMDb;
 
 class CoreController extends Controller
 {
-	public function movieAction()
+	public function movieAction(Request $request)
 	{
-		$this->Getmovie();
+		//$this->Getmovie();
 		$db = $this->getDoctrine()
 		      ->getManager()
 		      ->getRepository('CoreBundle:OMDb');
 		    $my_omdb = $db->findAll();
+
+		if($request->isMethod('POST'))
+		{
+			$post = $request->request->all();
+
+			$filter = $this->container->get('core.filter');
+
+			$search = $filter->filterWork($post);
+
+			$repository = $this->getDoctrine()
+			 ->getManager()
+			 ->getRepository('CoreBundle:OMDb');
+
+			$search = $repository->filter($search);
+
+			if($post['genre'] != '0')
+			{
+				foreach($search as $elem => $value)
+				{
+					if(!strstr($value->getGenre(), $post['genre']))
+						unset($search[$elem]);
+				}
+			}
+
+			 return $this->render('CoreBundle:HP:movie.html.twig', array('data' => $search));
+		 }
+
+
 	return $this->render('CoreBundle:HP:movie.html.twig', array('data' => $my_omdb));
-	}
+}
 
 	public function indexAction()
 	{
 	return $this->render('CoreBundle:HP:index.html.twig');
+	}
+
+	public function streamAction()
+	{
+	return $this->render('CoreBundle:HP:stream.html.twig');
 	}
 
 	public function serieAction()
@@ -32,8 +65,8 @@ class CoreController extends Controller
 
   public function Getmovie()
   {
-  	ignore_user_abort(true);
-	set_time_limit(0);
+  	//ignore_user_abort(true);
+	set_time_limit(300);
 
 	function getSslPage($url)
 	{
@@ -50,9 +83,9 @@ class CoreController extends Controller
 	}
 	$film = 0;
 	$liens = 0;
-	$page = 0;
-	$nbr_film = 2;
-	while ($film != $nbr_film && $liens < 10)
+	$page = 30;
+	$nbr_film = 56;
+	while ($film != $nbr_film)
 	{
 		$dom = getSslPage('https://thepiratebay.org/browse/201/' . $page . '/7'); /* ON RECUPERE LE CODE SOURCE ET EXTRAIT TOUT LES LIENS D'UNE PAGE */
 		$crawler = new Crawler($dom);

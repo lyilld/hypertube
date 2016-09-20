@@ -10,4 +10,47 @@ namespace CoreBundle\Repository;
  */
 class OMDbRepository extends \Doctrine\ORM\EntityRepository
 {
+  public function filter($filter)
+  {
+
+    // je check dans un premier temps la note et l'année,
+    // puis je regarde dans les film trouvé lesquelles correpondent au genre voulu
+
+
+    $qb = $this->createQueryBuilder('o');
+
+    if (array_key_exists('years', $filter) && array_key_exists('rated', $filter))
+    {
+        $qb->where('o.year = :year')
+        ->setParameter('year', $filter['years'])
+        ->andWhere('o.rating >= :rated')
+        ->setParameter('rated', $filter['rated']);
+        print_r ($filter);
+    }
+    else if(!array_key_exists('years', $filter) && array_key_exists('rated', $filter))
+    {
+      $qb->Where('o.rating >= :rated')
+      ->setParameter('rated', $filter['rated']);
+      print_r($filter);
+    }
+    else if(array_key_exists('years', $filter) && !array_key_exists('rated', $filter))
+    {
+      $qb->where('o.year = :year')
+      ->setParameter('year', $filter['years']);
+      print_r($filter);
+    }
+
+    if(array_key_exists('filter', $filter))
+    {
+      if($filter['filter'] == 'year')
+        $qb->orderBy('o.year', 'DESC');
+      else if($filter['filter'] == 'title')
+        $qb->orderBy('o.title', 'ASC');
+    }
+
+    return $qb
+    ->getQuery()
+    ->getResult();
+  }
+  
 }

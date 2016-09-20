@@ -57,6 +57,18 @@ function display_register()
 	}
 }
 
+function display_all_infos()
+{
+	if (document.getElementById("player_content").style.top == "500px")
+	{
+		document.getElementById("player_content").style.top="0";
+	}
+	else
+	{	
+		document.getElementById("player_content").style.top="500px";
+	}
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   particleground(document.getElementById('background'), {
     dotColor: 'rgba(196, 200, 201,0.4)',

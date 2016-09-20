@@ -15,8 +15,8 @@ class __TwigTemplate_0a9f9092aeb0410c29984b63d5c9b0be067c7234a6e9be6775324211149
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_040280e8b4dff1172265dfd5ef459432109fef6c640bed0c88facac9eff770b3 = $this->env->getExtension("native_profiler");
-        $__internal_040280e8b4dff1172265dfd5ef459432109fef6c640bed0c88facac9eff770b3->enter($__internal_040280e8b4dff1172265dfd5ef459432109fef6c640bed0c88facac9eff770b3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Security:login.html.twig"));
+        $__internal_525b64e1b4ce77e0095bdc2f2a569025606bf8313166b28ad30c059b77c4f096 = $this->env->getExtension("native_profiler");
+        $__internal_525b64e1b4ce77e0095bdc2f2a569025606bf8313166b28ad30c059b77c4f096->enter($__internal_525b64e1b4ce77e0095bdc2f2a569025606bf8313166b28ad30c059b77c4f096_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Security:login.html.twig"));
 
         // line 1
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
@@ -112,92 +112,28 @@ class __TwigTemplate_0a9f9092aeb0410c29984b63d5c9b0be067c7234a6e9be6775324211149
 \t\t\t</section>
 \t\t</fieldset>
 \t\t<footer>
-\t\t\t<button type=\"button\" onclick=\"Ajaxlogin();\" class=\"button\" id=\"_submit\" name=\"_submit\" value=\"";
+\t\t\t<input type=\"submit\" class=\"button\" id=\"_submit\" name=\"_submit\" value=\"";
         // line 50
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Log In"), "html", null, true);
-        echo "\"></button>
-\t\t</footer>
+        echo "\"/>
 \t</form>
 \t<img src=\"";
-        // line 53
+        // line 52
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("/bundles/IMAGE/DarthVader.png"), "html", null, true);
         echo "\" style=\"position: absolute; top: -300px; width: 600px; height: 357px; z-index: -1; opacity: 0.9;\">
 \t<img src=\"";
-        // line 54
+        // line 53
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("/bundles/IMAGE/bb8.png"), "html", null, true);
         echo "\" style=\"position: absolute; top: -88px; right: 0px; width: 100px; height: 100px; z-index: -1; opacity: 0.9;\">
 \t<img src=\"";
-        // line 55
+        // line 54
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("/bundles/IMAGE/r2d2.png"), "html", null, true);
         echo "\" style=\"position: absolute; top: -138px; left: 0px; width: 120px; height: 150px; z-index: -1; opacity: 0.9;\">
 </body>
 </html>
-
-<script>
-// 
-// var test = document.getElementById('_submit');
-//
-// test.addEventListener(\"click\", function(){
-//   alert('KO');
-// })
-// // function Ajaxlogin()
-// // {
-// //   \$.ajax({
-// // \t\turl :  'security_check_route',
-// // \t\ttype : 'POST',
-// // \t\tdata : \$('form').serialize(),
-// // \t\tdataType    : \"json\",
-// // \t\tsuccess     : function(data, status, object) {
-// // \t\t\t\t\t\t\t console.log( status );
-// // \t\t\t\t\t\t\t console.log( object.responseText );
-// // \t }
-// // \t})
-// // }
-// console.log('script');
-// function getXMLHttpRequest() {
-// \tvar xhr = null;
-//
-// \tif (window.XMLHttpRequest || window.ActiveXObject) {
-// \t\tif (window.ActiveXObject) {
-// \t\t\ttry {
-// \t\t\t\txhr = new ActiveXObject(\"Msxml2.XMLHTTP\");
-// \t\t\t} catch(e) {
-// \t\t\t\txhr = new ActiveXObject(\"Microsoft.XMLHTTP\");
-// \t\t\t}
-// \t\t} else {
-// \t\t\txhr = new XMLHttpRequest();
-// \t\t}
-// \t} else {
-// \t\talert(\"Votre navigateur ne supporte pas l'objet XMLHTTPRequest...\");
-// \t\treturn null;
-// \t}
-//
-// \treturn xhr;
-// }
-//
-//
-// function Ajaxlogin()
-// {
-//   var xhr = getXMLHttpRequest();
-//
-//   xhr.onreadystatechange = function() {
-// \t\tif (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-// \t\t\tconsole.log(xhr.responseText);
-//       console.log(\"WESH SA MARCHE\");
-// \t\t}
-// \t};
-//   console.log(\"ON ENTRE\");
-//   alert('KO');
-//   // xhr.open(\"POST\", \"http://localhost:8080/hypertube_2/web/app_dev.php/security_check_route\", true);
-//   // xhr.setRequestHeader(\"Content-Type\", \"application/x-www-form-urlencoded\");
-//   // xhr.send(\"variable1=truc&variable2=bidule\");
-}
-
-
-</script>
 ";
         
-        $__internal_040280e8b4dff1172265dfd5ef459432109fef6c640bed0c88facac9eff770b3->leave($__internal_040280e8b4dff1172265dfd5ef459432109fef6c640bed0c88facac9eff770b3_prof);
+        $__internal_525b64e1b4ce77e0095bdc2f2a569025606bf8313166b28ad30c059b77c4f096->leave($__internal_525b64e1b4ce77e0095bdc2f2a569025606bf8313166b28ad30c059b77c4f096_prof);
 
     }
 
@@ -213,7 +149,7 @@ class __TwigTemplate_0a9f9092aeb0410c29984b63d5c9b0be067c7234a6e9be6775324211149
 
     public function getDebugInfo()
     {
-        return array (  131 => 55,  127 => 54,  123 => 53,  117 => 50,  103 => 39,  94 => 33,  89 => 31,  82 => 27,  78 => 26,  71 => 22,  67 => 21,  57 => 14,  52 => 12,  48 => 11,  44 => 10,  40 => 9,  36 => 8,  30 => 4,  24 => 2,  22 => 1,);
+        return array (  130 => 54,  126 => 53,  122 => 52,  117 => 50,  103 => 39,  94 => 33,  89 => 31,  82 => 27,  78 => 26,  71 => 22,  67 => 21,  57 => 14,  52 => 12,  48 => 11,  44 => 10,  40 => 9,  36 => 8,  30 => 4,  24 => 2,  22 => 1,);
     }
 }
 /* {% if error %}*/
@@ -265,75 +201,11 @@ class __TwigTemplate_0a9f9092aeb0410c29984b63d5c9b0be067c7234a6e9be6775324211149
 /* 			</section>*/
 /* 		</fieldset>*/
 /* 		<footer>*/
-/* 			<button type="button" onclick="Ajaxlogin();" class="button" id="_submit" name="_submit" value="{{ 'Log In'|trans }}"></button>*/
-/* 		</footer>*/
+/* 			<input type="submit" class="button" id="_submit" name="_submit" value="{{ 'Log In'|trans }}"/>*/
 /* 	</form>*/
 /* 	<img src="{{ asset('/bundles/IMAGE/DarthVader.png') }}" style="position: absolute; top: -300px; width: 600px; height: 357px; z-index: -1; opacity: 0.9;">*/
 /* 	<img src="{{ asset('/bundles/IMAGE/bb8.png') }}" style="position: absolute; top: -88px; right: 0px; width: 100px; height: 100px; z-index: -1; opacity: 0.9;">*/
 /* 	<img src="{{ asset('/bundles/IMAGE/r2d2.png') }}" style="position: absolute; top: -138px; left: 0px; width: 120px; height: 150px; z-index: -1; opacity: 0.9;">*/
 /* </body>*/
 /* </html>*/
-/* */
-/* <script>*/
-/* // */
-/* // var test = document.getElementById('_submit');*/
-/* //*/
-/* // test.addEventListener("click", function(){*/
-/* //   alert('KO');*/
-/* // })*/
-/* // // function Ajaxlogin()*/
-/* // // {*/
-/* // //   $.ajax({*/
-/* // // 		url :  'security_check_route',*/
-/* // // 		type : 'POST',*/
-/* // // 		data : $('form').serialize(),*/
-/* // // 		dataType    : "json",*/
-/* // // 		success     : function(data, status, object) {*/
-/* // // 							 console.log( status );*/
-/* // // 							 console.log( object.responseText );*/
-/* // // 	 }*/
-/* // // 	})*/
-/* // // }*/
-/* // console.log('script');*/
-/* // function getXMLHttpRequest() {*/
-/* // 	var xhr = null;*/
-/* //*/
-/* // 	if (window.XMLHttpRequest || window.ActiveXObject) {*/
-/* // 		if (window.ActiveXObject) {*/
-/* // 			try {*/
-/* // 				xhr = new ActiveXObject("Msxml2.XMLHTTP");*/
-/* // 			} catch(e) {*/
-/* // 				xhr = new ActiveXObject("Microsoft.XMLHTTP");*/
-/* // 			}*/
-/* // 		} else {*/
-/* // 			xhr = new XMLHttpRequest();*/
-/* // 		}*/
-/* // 	} else {*/
-/* // 		alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");*/
-/* // 		return null;*/
-/* // 	}*/
-/* //*/
-/* // 	return xhr;*/
-/* // }*/
-/* //*/
-/* //*/
-/* // function Ajaxlogin()*/
-/* // {*/
-/* //   var xhr = getXMLHttpRequest();*/
-/* //*/
-/* //   xhr.onreadystatechange = function() {*/
-/* // 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {*/
-/* // 			console.log(xhr.responseText);*/
-/* //       console.log("WESH SA MARCHE");*/
-/* // 		}*/
-/* // 	};*/
-/* //   console.log("ON ENTRE");*/
-/* //   alert('KO');*/
-/* //   // xhr.open("POST", "http://localhost:8080/hypertube_2/web/app_dev.php/security_check_route", true);*/
-/* //   // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");*/
-/* //   // xhr.send("variable1=truc&variable2=bidule");*/
-/* }*/
-/* */
-/* */
-/* </script>*/
 /* */

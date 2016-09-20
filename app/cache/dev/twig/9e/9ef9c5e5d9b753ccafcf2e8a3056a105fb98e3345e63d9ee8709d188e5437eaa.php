@@ -16,8 +16,8 @@ class __TwigTemplate_8e615181c8bb200bb096083394e65c574aad50551d381b060fec74904f2
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a248ce234310c146c76ff872e3704f0bc8f61ffb81c8f1f5ab9f3f1e4e7eb3bf = $this->env->getExtension("native_profiler");
-        $__internal_a248ce234310c146c76ff872e3704f0bc8f61ffb81c8f1f5ab9f3f1e4e7eb3bf->enter($__internal_a248ce234310c146c76ff872e3704f0bc8f61ffb81c8f1f5ab9f3f1e4e7eb3bf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle::layout.html.twig"));
+        $__internal_8f5a991999183b3a29cf0149e99a146d1c7f713628df35c439d411a1494c0e92 = $this->env->getExtension("native_profiler");
+        $__internal_8f5a991999183b3a29cf0149e99a146d1c7f713628df35c439d411a1494c0e92->enter($__internal_8f5a991999183b3a29cf0149e99a146d1c7f713628df35c439d411a1494c0e92_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle::layout.html.twig"));
 
         // line 1
         echo "<html>
@@ -90,10 +90,16 @@ class __TwigTemplate_8e615181c8bb200bb096083394e65c574aad50551d381b060fec74904f2
         // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("/bundles/IMAGE/burger_icon.png"), "html", null, true);
         echo "\"></a>
-\t    \t\t\t<a id=\"menu_1\" href=\"/\"><span id=\"menu_span_active\">HOME</span></a>
-\t    \t\t\t<a id=\"menu_2\" href=\"movie\"><span id=\"menu_span_txt\" >MOVIES</span></a>
-\t    \t\t\t<a id=\"menu_3\" href=\"\"><span id=\"menu_span_txt\">SERIES</span></a>
-\t    \t\t\t<a id=\"menu_4\" href=\"\"><span id=\"menu_span_txt\">SHONEN</span></a>
+\t    \t\t\t<a id=\"menu_1\" href=\"";
+        // line 32
+        echo $this->env->getExtension('routing')->getPath("core_homepage");
+        echo "\"><span class=\"menu_span_active\">HOME</span></a>
+\t    \t\t\t<a id=\"menu_2\" href=\"";
+        // line 33
+        echo $this->env->getExtension('routing')->getPath("core_movie");
+        echo "\"><span class=\"menu_span_txt\" >MOVIES</span></a>
+\t    \t\t\t<a id=\"menu_3\" href=\"\"><span class=\"menu_span_txt\">SERIES</span></a>
+\t    \t\t\t<a id=\"menu_4\" href=\"\"><span class=\"menu_span_txt\">SHONEN</span></a>
                     ";
         // line 36
         if (($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_FULLY") == false)) {
@@ -121,7 +127,10 @@ class __TwigTemplate_8e615181c8bb200bb096083394e65c574aad50551d381b060fec74904f2
         if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 46
             echo "\t    \t\t\t\t<div id=\"div_profil_menu\">
-                            <a href=\"http://localhost:8080/hypertube/web/app_dev.php/profile\"><span>My Profil</span></a>
+                            <a href=\"";
+            // line 47
+            echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+            echo "\"><span>My Profil</span></a>
                         </div>
 \t\t\t\t\t\t";
         }
@@ -183,20 +192,20 @@ class __TwigTemplate_8e615181c8bb200bb096083394e65c574aad50551d381b060fec74904f2
 <html>
 ";
         
-        $__internal_a248ce234310c146c76ff872e3704f0bc8f61ffb81c8f1f5ab9f3f1e4e7eb3bf->leave($__internal_a248ce234310c146c76ff872e3704f0bc8f61ffb81c8f1f5ab9f3f1e4e7eb3bf_prof);
+        $__internal_8f5a991999183b3a29cf0149e99a146d1c7f713628df35c439d411a1494c0e92->leave($__internal_8f5a991999183b3a29cf0149e99a146d1c7f713628df35c439d411a1494c0e92_prof);
 
     }
 
     // line 87
     public function block_body($context, array $blocks = array())
     {
-        $__internal_48988a4d161b2ad7ca727706449a7fa2ddfff780718785677ee5789057030fe7 = $this->env->getExtension("native_profiler");
-        $__internal_48988a4d161b2ad7ca727706449a7fa2ddfff780718785677ee5789057030fe7->enter($__internal_48988a4d161b2ad7ca727706449a7fa2ddfff780718785677ee5789057030fe7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_c220e03dc46b9e18f44b87de8ff6968af2b2609be35ca651e3c16f1646cb612d = $this->env->getExtension("native_profiler");
+        $__internal_c220e03dc46b9e18f44b87de8ff6968af2b2609be35ca651e3c16f1646cb612d->enter($__internal_c220e03dc46b9e18f44b87de8ff6968af2b2609be35ca651e3c16f1646cb612d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 88
         echo "\t\t";
         
-        $__internal_48988a4d161b2ad7ca727706449a7fa2ddfff780718785677ee5789057030fe7->leave($__internal_48988a4d161b2ad7ca727706449a7fa2ddfff780718785677ee5789057030fe7_prof);
+        $__internal_c220e03dc46b9e18f44b87de8ff6968af2b2609be35ca651e3c16f1646cb612d->leave($__internal_c220e03dc46b9e18f44b87de8ff6968af2b2609be35ca651e3c16f1646cb612d_prof);
 
     }
 
@@ -212,7 +221,7 @@ class __TwigTemplate_8e615181c8bb200bb096083394e65c574aad50551d381b060fec74904f2
 
     public function getDebugInfo()
     {
-        return array (  197 => 88,  191 => 87,  180 => 89,  178 => 87,  172 => 83,  166 => 80,  163 => 79,  157 => 75,  155 => 74,  129 => 50,  123 => 46,  121 => 45,  113 => 41,  107 => 39,  101 => 37,  99 => 36,  91 => 31,  82 => 25,  78 => 24,  73 => 22,  64 => 16,  60 => 15,  56 => 14,  52 => 13,  46 => 10,  41 => 8,  37 => 7,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  206 => 88,  200 => 87,  189 => 89,  187 => 87,  181 => 83,  175 => 80,  172 => 79,  166 => 75,  164 => 74,  138 => 50,  132 => 47,  129 => 46,  127 => 45,  119 => 41,  113 => 39,  107 => 37,  105 => 36,  99 => 33,  95 => 32,  91 => 31,  82 => 25,  78 => 24,  73 => 22,  64 => 16,  60 => 15,  56 => 14,  52 => 13,  46 => 10,  41 => 8,  37 => 7,  33 => 6,  29 => 5,  23 => 1,);
     }
 }
 /* <html>*/
@@ -246,10 +255,10 @@ class __TwigTemplate_8e615181c8bb200bb096083394e65c574aad50551d381b060fec74904f2
 /*     			<div id="menu_container">*/
 /*     				<div id="selector"></div>*/
 /*     				<a><img id="home_icon" src="{{ asset('/bundles/IMAGE/burger_icon.png') }}"></a>*/
-/* 	    			<a id="menu_1" href="/"><span id="menu_span_active">HOME</span></a>*/
-/* 	    			<a id="menu_2" href="movie"><span id="menu_span_txt" >MOVIES</span></a>*/
-/* 	    			<a id="menu_3" href=""><span id="menu_span_txt">SERIES</span></a>*/
-/* 	    			<a id="menu_4" href=""><span id="menu_span_txt">SHONEN</span></a>*/
+/* 	    			<a id="menu_1" href="{{ path('core_homepage') }}"><span class="menu_span_active">HOME</span></a>*/
+/* 	    			<a id="menu_2" href="{{ path('core_movie') }}"><span class="menu_span_txt" >MOVIES</span></a>*/
+/* 	    			<a id="menu_3" href=""><span class="menu_span_txt">SERIES</span></a>*/
+/* 	    			<a id="menu_4" href=""><span class="menu_span_txt">SHONEN</span></a>*/
 /*                     {% if is_granted('IS_AUTHENTICATED_FULLY') == false %}*/
 /* 	    			<a><img class='icon_menu' src="{{ asset('/bundles/IMAGE/Disconnect.png') }}"></a>*/
 /*                     {% else %}*/
@@ -261,7 +270,7 @@ class __TwigTemplate_8e615181c8bb200bb096083394e65c574aad50551d381b060fec74904f2
 /*                         <div id="green_bar_div" style="position: absolute; right: 0px; height: 50px; width:50px; background-color: rgba(46, 204, 113,1.0); top: -50px; "></div>*/
 /* 						{% if is_granted('IS_AUTHENTICATED_FULLY') %}*/
 /* 	    				<div id="div_profil_menu">*/
-/*                             <a href="http://localhost:8080/hypertube/web/app_dev.php/profile"><span>My Profil</span></a>*/
+/*                             <a href="{{ path('fos_user_profile_show') }}"><span>My Profil</span></a>*/
 /*                         </div>*/
 /* 						{% endif %}*/
 /* 	    				<div id="div_profil_menu">*/

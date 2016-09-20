@@ -29,10 +29,10 @@
     			<div id="menu_container">
     				<div id="selector"></div>
     				<a><img id="home_icon" src="{{ asset('/bundles/IMAGE/burger_icon.png') }}"></a>
-	    			<a id="menu_1" href="/"><span id="menu_span_active">HOME</span></a>
-	    			<a id="menu_2" href="movie"><span id="menu_span_txt" >MOVIES</span></a>
-	    			<a id="menu_3" href=""><span id="menu_span_txt">SERIES</span></a>
-	    			<a id="menu_4" href=""><span id="menu_span_txt">SHONEN</span></a>
+	    			<a id="menu_1" href="{{ path('core_homepage') }}"><span class="menu_span_active">HOME</span></a>
+	    			<a id="menu_2" href="{{ path('core_movie') }}"><span class="menu_span_txt" >MOVIES</span></a>
+	    			<a id="menu_3" href=""><span class="menu_span_txt">SERIES</span></a>
+	    			<a id="menu_4" href=""><span class="menu_span_txt">SHONEN</span></a>
                     {% if is_granted('IS_AUTHENTICATED_FULLY') == false %}
 	    			<a><img class='icon_menu' src="{{ asset('/bundles/IMAGE/Disconnect.png') }}"></a>
                     {% else %}
@@ -44,7 +44,7 @@
                         <div id="green_bar_div" style="position: absolute; right: 0px; height: 50px; width:50px; background-color: rgba(46, 204, 113,1.0); top: -50px; "></div>
 						{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 	    				<div id="div_profil_menu">
-                            <a href="http://localhost:8080/hypertube/web/app_dev.php/profile"><span>My Profil</span></a>
+                            <a href="{{ path('fos_user_profile_show') }}"><span>My Profil</span></a>
                         </div>
 						{% endif %}
 	    				<div id="div_profil_menu">

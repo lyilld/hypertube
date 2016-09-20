@@ -1,6 +1,6 @@
 <?php
 
-/* UserBundle:Registration:register_content.html.twig */
+/* FOSUserBundle:Registration:register_content.html.twig */
 class __TwigTemplate_0d6d4219c662e2e1d0abdf3ea48ee5aee7680a6a7cb6470d1ccde5ed905755bb extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_0d6d4219c662e2e1d0abdf3ea48ee5aee7680a6a7cb6470d1ccde5ed905
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e3a15c94ff59cdc898c6b1670f481d7289cc37b4da0c27e65faad0395e6633aa = $this->env->getExtension("native_profiler");
-        $__internal_e3a15c94ff59cdc898c6b1670f481d7289cc37b4da0c27e65faad0395e6633aa->enter($__internal_e3a15c94ff59cdc898c6b1670f481d7289cc37b4da0c27e65faad0395e6633aa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Registration:register_content.html.twig"));
+        $__internal_003187d0213074714b8e3f64308b8f1ff01c5eecc9cb050489358329c9bba088 = $this->env->getExtension("native_profiler");
+        $__internal_003187d0213074714b8e3f64308b8f1ff01c5eecc9cb050489358329c9bba088->enter($__internal_003187d0213074714b8e3f64308b8f1ff01c5eecc9cb050489358329c9bba088_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Registration:register_content.html.twig"));
 
         // line 2
         echo "
@@ -165,13 +165,13 @@ class __TwigTemplate_0d6d4219c662e2e1d0abdf3ea48ee5aee7680a6a7cb6470d1ccde5ed905
   </div>
 ";
         
-        $__internal_e3a15c94ff59cdc898c6b1670f481d7289cc37b4da0c27e65faad0395e6633aa->leave($__internal_e3a15c94ff59cdc898c6b1670f481d7289cc37b4da0c27e65faad0395e6633aa_prof);
+        $__internal_003187d0213074714b8e3f64308b8f1ff01c5eecc9cb050489358329c9bba088->leave($__internal_003187d0213074714b8e3f64308b8f1ff01c5eecc9cb050489358329c9bba088_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "UserBundle:Registration:register_content.html.twig";
+        return "FOSUserBundle:Registration:register_content.html.twig";
     }
 
     public function isTraitable()
