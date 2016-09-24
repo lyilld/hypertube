@@ -1,0 +1,15 @@
+core_homepage:
+    path:     /
+    defaults: { _controller: CoreBundle:Core:index }
+
+core_movie:
+    path:     /movie
+    defaults: { _controller: CoreBundle:Core:movie }
+
+core_serie:
+    path:     /serie
+    defaults: { _controller: CoreBundle:Core:serie }
+
+core_stream:
+    path:     /stream
+    defaults: { _controller: CoreBundle:Core:stream }
