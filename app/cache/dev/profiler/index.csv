@@ -1,9 +1,0 @@
-530bf5,127.0.0.1,GET,http://localhost:8080/ppp/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ARegistration%253AMyRegister,1474413639,837a30,200
-837a30,127.0.0.1,GET,http://localhost:8080/ppp/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ASecurity%253ALoginBis,1474413639,837de5,200
-837de5,::1,GET,http://localhost:8080/ppp/web/app_dev.php/,1474413639,,200
-0fb84d,127.0.0.1,GET,http://localhost:8080/ppp/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ARegistration%253AMyRegister,1474413997,e0bc3a,200
-e0bc3a,127.0.0.1,GET,http://localhost:8080/ppp/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ASecurity%253ALoginBis,1474413997,6c466e,200
-6c466e,::1,GET,http://localhost:8080/ppp/web/app_dev.php/,1474413997,,200
-52f99d,127.0.0.1,GET,http://localhost:8080/ppp/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ARegistration%253AMyRegister,1474414076,2336bf,200
-2336bf,127.0.0.1,GET,http://localhost:8080/ppp/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DFOSUserBundle%253ASecurity%253ALoginBis,1474414076,be2681,200
-be2681,::1,GET,http://localhost:8080/ppp/web/app_dev.php/,1474414076,,200
