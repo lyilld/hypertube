@@ -23,7 +23,9 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "symfony/dom-crawler" : "3.1.4",
-        "divi/ajax-login-bundle": "dev-master"
+        "divi/ajax-login-bundle": "dev-master",
+        "chellem/transmission-bundle": "1.0.0",
+        "kleiram/transmission-php": "1.0.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

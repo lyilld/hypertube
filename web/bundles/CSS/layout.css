@@ -52,7 +52,6 @@ input
   position: absolute;
   width: 220px;
   height: 80px;
-  cursor: url(../IMAGE/cursor_magic.cur), auto;
 }
 
 #search_bar
@@ -83,6 +82,8 @@ input
   border-bottom-right-radius: 5px;
   box-shadow: 1px 1px 5px rgba(30, 30, 30, 0.2);
   transition: background-color 0.3s;
+  outline: none;
+  border: none;
 }
 
 .menu_span_txt
@@ -134,7 +135,7 @@ input
   width: 4%;
   margin-top: 5px;
   z-index: 50;
-  cursor: url(../IMAGE/cursor.cur), auto;
+  cursor: pointer;
 }
 
 #home_icon
@@ -507,6 +508,61 @@ input
 {
   width: 100%;
   height: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#play_button
+{
+
+  opacity: 0;
+  z-index: 0;
+  position: absolute;
+  font-size: 4em;
+  top: 0px;
+  right: 15px;
+  transform: scale(1.2);
+  color: rgba(30, 30, 30, 0.3);
+  text-shadow: 0px 0px 5px rgba(255,255,255,0.4);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#film:hover #play_button
+{
+  transform: scale(1);
+  opacity: 1;
+}
+
+#play_button:hover
+{
+  color: rgba(230, 220, 80,1.0);
+  text-shadow: 0px 0px 20px rgba(241, 196, 15,0.4);
+  z-index: 500;
+}
+
+#content_rate, #content_format
+{
+  opacity: 0;
+  transform: scale(1.2);
+  transform: opacity 0.4s, transform 0.3s;
+}
+
+.poster:hover #content_rate, .poster:hover #content_format
+{
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .suggest_film:hover
@@ -810,8 +866,6 @@ input
 {
   overflow: hidden;
   font-family: geo;
-  background-image: url("../IMAGE/stripe.png");
-  background-repeat: repeat;
   border-top: 3px dotted rgb(30,30,30);
   position: absolute;
   min-height: 500px;
@@ -899,4 +953,162 @@ input
   min-height: 1000px;
   background-color: rgb(20,20,20);
   transition: top 0.4s;
+}
+
+.nextButton, .previousButton, .case1, .case2, .case3, .case4, .case5
+{
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.nextButton:active, .previousButton:active, .case1:active, .case2:active, .case3:active, .case4:active, .case5:active
+{
+  outline: none;
+}
+
+.img_profile
+{
+  z-index: 190;
+  position: absolute;
+  top: 21px;
+  left: 20px;
+  width: 320px;
+  height: 278px;
+  border-radius: 20px;
+}
+
+.profil_name
+{
+  position: absolute;
+  left: 370px;
+  top: 15px;
+  font-family: geo;
+  font-size: 2.5em;
+}
+
+.film_viewed
+{
+  position: absolute;
+  top: 120px;
+  left: 370px;
+  width: 100px;
+  height: 65px;
+}
+
+.time_spend
+{
+  position: absolute;
+  top: 120px;
+  left: 490px;
+  width: 100px;
+  height: 65px;
+}
+
+.like
+{
+  position: absolute;
+  top: 120px;
+  left: 610px;
+  width: 100px;
+  height: 65px;
+}
+
+#state
+{
+  position: absolute;
+  top: 300px;
+  left: 30px;
+  color: rgba(46, 204, 113,1.0);
+  font-size: 1.2em;
+  font-family: geo;
+}
+
+#favlater
+{
+
+  position: relative;
+  top: 350px;
+  width: 100%;
+  height: 1650px;
+}
+
+
+#later, #fav
+{
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+
+#favheader
+{
+  border-bottom:1px solid rgba(46, 204, 113,1.0);
+  position: relative;
+  top: 0;
+  width: 200px;
+  height: 60px;
+  margin: auto;
+  font-family: geo;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+#history, #favo
+{
+  color: rgba(30,30,30,1);
+  transition: color 0.3s, transform 0.3s;
+}
+
+#history:hover, #favo:hover
+{
+
+  transform: scale(1.1);
+}
+
+.ui-menu
+{
+  font-family: geo;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  background-color: blue;
+}
+
+.ui-menu .ui-menu-item a.ui-state-hover, .ui-menu .ui-menu-item a.ui-state-active
+{
+  color: rgba(46, 204, 113,1.0);
+  font-style: italic;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  background: none;
+}
+
+.ui-menu .ui-menu-item {
+  color: red;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+.ui-menu .ui-menu
+{
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  background-color: blue;
+}
+
+.ui-menu .ui-menu-item a
+{
+  color: rgba(30,30,30,0.6);
+}
+
+.video-js
+{
+  position: absolute;
+  top: 20px;
+  left: 50px;
 }

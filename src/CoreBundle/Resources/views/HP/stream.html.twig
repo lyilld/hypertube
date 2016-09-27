@@ -2,16 +2,17 @@
 {% block content %}
 
 <div id="content_page">
+	{% if data_film is defined %}
 	<div class="movie_infos">
-		<div id="m_title">Ninja Turtle<span id="pegi">-13</span></div>
-		<div id="m_director"><span style="font-size: 0.8em;">Director : </span><span style="font-style: bold; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.7);">Jannis Niewöhner, Maria Ehrich</span></div>
-		<div id="m_actor"><span style="font-size: 0.9em;">Actors : </span><span style="font-style: bold; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.7);">Jannis Niewöhner, Maria Ehrich, Laura Berlin</span></div>
+		<div id="m_title">{{ data_film.title }}<span id="pegi">-13</span></div>
+		<div id="m_director"><span style="font-size: 0.8em;">Director : </span><span style="font-style: bold; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.7);">{{ data_film.director }}</span></div>
+		<div id="m_actor"><span style="font-size: 0.9em;">Actors : </span><span style="font-style: bold; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.7);">{{ data_film.actors }}</span></div>
 
-		<div id="m_time">146 min</div>
-		<div id="m_year">2016 /</div>
-		<img src="http://images.fan-de-cinema.com/affiches/large/65/67886.jpg" class="m_poster">
+		<div id="m_time">{{ data_film.runtime }}</div>
+		<div id="m_year">{{ data_film.year }}/</div>
+		<img src="../../../{{ data_film.poster }}" class="m_poster">
 		<div id="m_rate">
-			<div id="note">5.6</div>
+			<div id="note">{{ data_film.rating }}</div>
 			<div id="note_text">IMDb</div>
 		</div>
 		<div id="rated_stars">
@@ -25,19 +26,13 @@
 	</div>
 	<div id="infos_completes">
 		<div id="m_plot"><span style="font-size: 1.2em; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.9);">PLOT</span>
-		Jojo Braconnier ne peut plus supporter sa femme alcoolique, mauvaise et littéralement invivable. Il découvre à la télévision un reportage sur Maître Jacquard, un avocat brillant qui vient d'obtenir son vingt-cinquième acquittement.
-		Jojo le rencontre et lui avoue le meurtre de sa femme, un crime qu'il n'a pas commis. De façon très adroite, il obtient des explications de l'avocat sur la façon dont il aurait dû agir pour obtenir les circonstances atténuantes, voire même l'acquittement. De retour chez lui, Jojo suit à la lettre les \"recommandations\" de Maître Jacquard et tue son épouse.
+			{{ data_film.plot }}
 		</div>
-		<div id="m_genre"><span style="font-size: 1.2em; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.9);">GENRE </span>Action, Adventure, Crime
-		</div>
-		<div id="m_genre"><span style="font-size: 1.2em; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.9);">RELEASED </span>05 Aug 2016
-		</div>
-		<div id="m_writer"><span style="font-size: 1.2em; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.9);">WRITER </span>Andrew Jay Cohen, Brendan O'Brien Andrew Jay Cohen, Brendan O'Brien
-		</div>
-		<div id="m_writer"><span style="font-size: 1.2em; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.9);">ORIGINAL LANGUAGE </span> English, Japanese, Spanish
-		</div>
-		<div id="m_onlineto"><span style="font-size: 1.2em; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.9);">TORRENT Online since </span> 2016/09/17 19:32:11
-		</div>
+		<div id="m_genre"><span style="font-size: 1.2em; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.9);">GENRE </span>{{ data_film.genre }}</div>
+		<div id="m_genre"><span style="font-size: 1.2em; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.9);">RELEASED </span>{{ data_film.released }}</div>
+		<div id="m_writer"><span style="font-size: 1.2em; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.9);">WRITER </span>{{ data_film.writer }}</div>
+		<div id="m_writer"><span style="font-size: 1.2em; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.9);">ORIGINAL LANGUAGE </span>{{ data_film.language }}</div>
+		<div id="m_onlineto"><span style="font-size: 1.2em; color: rgba(46, 204, 113,1.0); text-shadow: 1px 1px 1px rgba(29, 104, 46, 0.9);">TORRENT Online since </span>{{ data_film.datetime }}</div>
 	</div>
 	<div id="player_content">
 		{#Deplacer le link et le script au bonne endroit#}
@@ -45,12 +40,13 @@
 		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/azinevideojs/css/video-js.css') }}" />
 		<script type="text/javascript" src="{{ asset('bundles/azinevideojs/js/video.min.js') }}"></script>
 		{#----------#}
-		<video id="my_video_1" class="video-js vjs-default-skin" width="800px" height="400px"
+		<video id="my_video_1" class="video-js vjs-default-skin" width="900px" height="480px"
 			   controls preload="none" poster='http://video-js.zencoder.com/oceans-clip.jpg'
 			   data-setup='{ "aspectRatio":"16:9", "playbackRates": [1, 1.5, 2] }'>
 			<source src="http://vjs.zencdn.net/v/oceans.webm" type='video/webm' />
 		</video>
 	</div>
+	{% endif %}
 </div>
 
 {% endblock %}

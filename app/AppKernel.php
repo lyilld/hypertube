@@ -25,6 +25,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new CoreBundle\CoreBundle(),
             new Divi\AjaxLoginBundle\DiviAjaxLoginBundle(),
+            new ApiBundle\ApiBundle(),
+            new Transmission\Bundle\TransmissionBundle\TransmissionBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

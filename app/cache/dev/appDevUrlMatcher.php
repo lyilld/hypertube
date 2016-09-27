@@ -126,10 +126,20 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // core_stream
-            if ($pathinfo === '/stream') {
-                return array (  '_controller' => 'CoreBundle\\Controller\\CoreController::streamAction',  '_route' => 'core_stream',);
+            if (0 === strpos($pathinfo, '/stream') && preg_match('#^/stream/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'core_stream')), array (  '_controller' => 'CoreBundle\\Controller\\CoreController::streamAction',));
             }
 
+            // core_search
+            if ($pathinfo === '/search') {
+                return array (  '_controller' => 'CoreBundle\\Controller\\SearchController::searchAction',  '_route' => 'core_search',);
+            }
+
+        }
+
+        // core_test
+        if ($pathinfo === '/test') {
+            return array (  '_controller' => 'CoreBundle\\Controller\\CoreController::testAction',  '_route' => 'core_test',);
         }
 
         // user_homepage

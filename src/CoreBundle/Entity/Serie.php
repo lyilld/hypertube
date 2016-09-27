@@ -1,0 +1,536 @@
+<?php
+
+namespace CoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Serie
+ *
+ * @ORM\Table(name="serie")
+ * @ORM\Entity(repositoryClass="CoreBundle\Repository\SerieRepository")
+ */
+class Serie
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var datetime
+     * @ORM\Column(name="DateTime", type="datetime")
+     *
+     */
+
+    private $datetime;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="View", type="integer")
+     */
+    private $view;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Title", type="string", length=255)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Year", type="string", length=255)
+     */
+    private $year;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Released", type="string", length=255)
+     */
+    private $released;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Runtime", type="string", length=255)
+     */
+    private $runtime;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Genre", type="string", length=255)
+     */
+    private $genre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Director", type="string", length=255)
+     */
+    private $director;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Writer", type="string", length=255)
+     */
+    private $writer;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Actors", type="string", length=255)
+     */
+    private $actors;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Plot", type="text")
+     */
+    private $plot;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Poster", type="text")
+     */
+    private $poster;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Rating", type="string", length=255)
+     */
+    private $rating;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Rated", type="string", length=255)
+     */
+    private $rated;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Idmdb", type="string", length=255)
+     */
+    private $idmdb;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Language", type="string", length=255)
+     */
+    private $language;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+
+    public function __construct()
+    {
+        $this->datetime = new \DateTime();
+    }
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Serie
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set year
+     *
+     * @param string $year
+     *
+     * @return Serie
+     */
+    public function setYear($year)
+    {
+        $this->year = $year;
+
+        return $this;
+    }
+
+    /**
+     * Get year
+     *
+     * @return string
+     */
+    public function getYear()
+    {
+        return $this->year;
+    }
+
+    /**
+     * Set released
+     *
+     * @param string $released
+     *
+     * @return Serie
+     */
+    public function setReleased($released)
+    {
+        $this->released = $released;
+
+        return $this;
+    }
+
+    /**
+     * Get released
+     *
+     * @return string
+     */
+    public function getReleased()
+    {
+        return $this->released;
+    }
+
+    /**
+     * Set runtime
+     *
+     * @param string $runtime
+     *
+     * @return Serie
+     */
+    public function setRuntime($runtime)
+    {
+        $this->runtime = $runtime;
+
+        return $this;
+    }
+
+    /**
+     * Get runtime
+     *
+     * @return string
+     */
+    public function getRuntime()
+    {
+        return $this->runtime;
+    }
+
+    /**
+     * Set genre
+     *
+     * @param string $genre
+     *
+     * @return Serie
+     */
+    public function setGenre($genre)
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
+    /**
+     * Get genre
+     *
+     * @return string
+     */
+    public function getGenre()
+    {
+        return $this->genre;
+    }
+
+    /**
+     * Set director
+     *
+     * @param string $director
+     *
+     * @return Serie
+     */
+    public function setDirector($director)
+    {
+        $this->director = $director;
+
+        return $this;
+    }
+
+    /**
+     * Get director
+     *
+     * @return string
+     */
+    public function getDirector()
+    {
+        return $this->director;
+    }
+
+    /**
+     * Set writer
+     *
+     * @param string $writer
+     *
+     * @return Serie
+     */
+    public function setWriter($writer)
+    {
+        $this->writer = $writer;
+
+        return $this;
+    }
+
+    /**
+     * Get writer
+     *
+     * @return string
+     */
+    public function getWriter()
+    {
+        return $this->writer;
+    }
+
+    /**
+     * Set actors
+     *
+     * @param string $actors
+     *
+     * @return Serie
+     */
+    public function setActors($actors)
+    {
+        $this->actors = $actors;
+
+        return $this;
+    }
+
+    /**
+     * Get actors
+     *
+     * @return string
+     */
+    public function getActors()
+    {
+        return $this->actors;
+    }
+
+    /**
+     * Set plot
+     *
+     * @param string $plot
+     *
+     * @return Serie
+     */
+    public function setPlot($plot)
+    {
+        $this->plot = $plot;
+
+        return $this;
+    }
+
+    /**
+     * Get plot
+     *
+     * @return string
+     */
+    public function getPlot()
+    {
+        return $this->plot;
+    }
+
+    /**
+     * Set poster
+     *
+     * @param string $poster
+     *
+     * @return Serie
+     */
+    public function setPoster($poster)
+    {
+        $this->poster = $poster;
+
+        return $this;
+    }
+
+    /**
+     * Get poster
+     *
+     * @return string
+     */
+    public function getPoster()
+    {
+        return $this->poster;
+    }
+
+    /**
+     * Set rating
+     *
+     * @param string $rating
+     *
+     * @return Serie
+     */
+    public function setRating($rating)
+    {
+        $this->rating = $rating;
+
+        return $this;
+    }
+
+    /**
+     * Get rating
+     *
+     * @return string
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    /**
+     * Set rated
+     *
+     * @param string $rated
+     *
+     * @return Serie
+     */
+    public function setRated($rated)
+    {
+        $this->rated = $rated;
+
+        return $this;
+    }
+
+    /**
+     * Get rated
+     *
+     * @return string
+     */
+    public function getRated()
+    {
+        return $this->rated;
+    }
+
+    /**
+     * Set idmdb
+     *
+     * @param string $idmdb
+     *
+     * @return Serie
+     */
+    public function setIdmdb($idmdb)
+    {
+        $this->idmdb = $idmdb;
+
+        return $this;
+    }
+
+    /**
+     * Get idmdb
+     *
+     * @return string
+     */
+    public function getIdmdb()
+    {
+        return $this->idmdb;
+    }
+
+    /**
+     * Set language
+     *
+     * @param string $language
+     *
+     * @return Serie
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    /**
+     * Set datetime
+     *
+     * @param \DateTime $datetime
+     *
+     * @return Serie
+     */
+    public function setDatetime($datetime)
+    {
+        $this->datetime = $datetime;
+
+        return $this;
+    }
+
+    /**
+     * Get datetime
+     *
+     * @return \DateTime
+     */
+    public function getDatetime()
+    {
+        return $this->datetime;
+    }
+
+    /**
+     * Set view
+     *
+     * @param integer $view
+     *
+     * @return Serie
+     */
+    public function setView($view)
+    {
+        $this->view = $view;
+
+        return $this;
+    }
+
+    /**
+     * Get view
+     *
+     * @return integer
+     */
+    public function getView()
+    {
+        return $this->view;
+    }
+}

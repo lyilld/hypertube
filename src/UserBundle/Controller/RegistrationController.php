@@ -20,11 +20,8 @@ Class RegistrationController extends BaseController
   public function MyRegisterAction(Request $request)
   {
 
-    /** @var $formFactory \FOS\UserBundle\Form\Factory\FactoryInterface */
      $formFactory = $this->get('fos_user.registration.form.factory');
-     /** @var $userManager \FOS\UserBundle\Model\UserManagerInterface */
      $userManager = $this->get('fos_user.user_manager');
-     /** @var $dispatcher \Symfony\Component\EventDispatcher\EventDispatcherInterface */
      $dispatcher = $this->get('event_dispatcher');
      $user = $userManager->createUser();
      $user->setEnabled(true);
@@ -40,11 +37,8 @@ Class RegistrationController extends BaseController
 
   public function registerAction(Request $request)
   {
-      /** @var $formFactory \FOS\UserBundle\Form\Factory\FactoryInterface */
       $formFactory = $this->get('fos_user.registration.form.factory');
-      /** @var $userManager \FOS\UserBundle\Model\UserManagerInterface */
       $userManager = $this->get('fos_user.user_manager');
-      /** @var $dispatcher \Symfony\Component\EventDispatcher\EventDispatcherInterface */
       $dispatcher = $this->get('event_dispatcher');
 
       $user = $userManager->createUser();
@@ -67,14 +61,9 @@ Class RegistrationController extends BaseController
           if ($form->isValid())
           {
 
-            if (!file_exists('image'))
-            {
-              mkdir('image', 0777, true);
-            }
-            $filename = uniqid() . ".png";
-            $form['image']->getData()->move("../image", $filename);
-
-            $reposite = "image/" . $filename;
+              $filename = uniqid() . ".png";
+              $form['image']->getData()->move("image/profil/", $filename);
+              $reposite = "image/profil/" . $filename;
 
               $event = new FormEvent($form, $request);
               $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);

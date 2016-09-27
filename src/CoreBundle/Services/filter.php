@@ -2,24 +2,30 @@
 
 namespace CoreBundle\Services;
 
-use CoreBundle\Repository\OMDbRepository;
-
 class filter
 {
-  public function filterWork($post)
-  {
-    if($post['rated'] != 0)
-      $post['rated'] = $post['rated'] * 2 - 2;
+    public function filterWork($post)
+    {
+        if($post['search'] == '0')
+        {
+            if($post['rated'] != 0)
+                $post['rated'] = $post['rated'] * 2 - 2;
 
-    $ArrayFilter = ['filter' => $post['filter'], 'genre' => $post['genre'],
-                    'years' => $post['Years'], 'rated' => $post['rated']];
+            $ArrayFilter = ['filter' => $post['filter'], 'genre' => $post['genre'],
+                'years' => $post['years'], 'rated' => $post['rated']];
 
-    $unsetKeys = array_keys($ArrayFilter, '0');
+            $unsetKeys = array_keys($ArrayFilter, '0');
 
-    foreach($unsetKeys as $elem)
-      unset($ArrayFilter[$elem]);
+            foreach($unsetKeys as $elem)
+                unset($ArrayFilter[$elem]);
 
-    return $ArrayFilter;
-  }
+            return $ArrayFilter;
+        }
+        else
+        {
+            $ArrayFilter = ['search' => $post['search']];
+            return $ArrayFilter;
+        }
+    }
 
 }

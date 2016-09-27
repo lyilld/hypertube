@@ -7,8 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
+    'Transmission\\Bundle\\TransmissionBundle' => array($vendorDir . '/chellem/transmission-bundle'),
+    'Transmission' => array($vendorDir . '/kleiram/transmission-php/lib'),
     'SensioLabs\\Security' => array($vendorDir . '/sensiolabs/security-checker'),
-    'Genemu\\Bundle\\FormBundle' => array($vendorDir . '/genemu/form-bundle'),
     'Doctrine\\ORM\\' => array($vendorDir . '/doctrine/orm/lib'),
     'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/lib'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
@@ -16,4 +17,5 @@ return array(
     'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
     'Divi\\AjaxLoginBundle' => array($vendorDir . '/divi/ajax-login-bundle'),
+    'Buzz' => array($vendorDir . '/kriswallsmith/buzz/lib'),
 );

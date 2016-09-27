@@ -36,7 +36,7 @@ class User extends \UserBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
      *
      * @see \Doctrine\Common\Persistence\Proxy::__getLazyProperties
      */
-    public static $lazyPropertiesDefaults = [];
+    public static $lazyPropertiesDefaults = ['lastname' => NULL, 'firstname' => NULL, 'image' => NULL];
 
 
 
@@ -46,16 +46,60 @@ class User extends \UserBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
      */
     public function __construct($initializer = null, $cloner = null)
     {
+        unset($this->lastname, $this->firstname, $this->image);
 
         $this->__initializer__ = $initializer;
         $this->__cloner__      = $cloner;
     }
 
+    /**
+     * 
+     * @param string $name
+     */
+    public function __get($name)
+    {
+        if (array_key_exists($name, $this->__getLazyProperties())) {
+            $this->__initializer__ && $this->__initializer__->__invoke($this, '__get', [$name]);
 
+            return $this->$name;
+        }
 
+        trigger_error(sprintf('Undefined property: %s::$%s', __CLASS__, $name), E_USER_NOTICE);
+    }
 
+    /**
+     * 
+     * @param string $name
+     * @param mixed  $value
+     */
+    public function __set($name, $value)
+    {
+        if (array_key_exists($name, $this->__getLazyProperties())) {
+            $this->__initializer__ && $this->__initializer__->__invoke($this, '__set', [$name, $value]);
 
+            $this->$name = $value;
 
+            return;
+        }
+
+        $this->$name = $value;
+    }
+
+    /**
+     * 
+     * @param  string $name
+     * @return boolean
+     */
+    public function __isset($name)
+    {
+        if (array_key_exists($name, $this->__getLazyProperties())) {
+            $this->__initializer__ && $this->__initializer__->__invoke($this, '__isset', [$name]);
+
+            return isset($this->$name);
+        }
+
+        return false;
+    }
 
     /**
      * 
@@ -64,10 +108,10 @@ class User extends \UserBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'id', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt'];
+            return ['__isInitialized__', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'statistique', 'id', 'lastname', 'firstname', 'url', 'image', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt'];
         }
 
-        return ['__isInitialized__', 'id', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt'];
+        return ['__isInitialized__', '' . "\0" . 'UserBundle\\Entity\\User' . "\0" . 'statistique', 'id', 'url', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt'];
     }
 
     /**
@@ -89,6 +133,7 @@ class User extends \UserBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
                 }
             };
 
+            unset($this->lastname, $this->firstname, $this->image);
         }
     }
 
@@ -176,6 +221,120 @@ class User extends \UserBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
+    public function Upload($image)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'Upload', [$image]);
+
+        return parent::Upload($image);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setLastname($lastname)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLastname', [$lastname]);
+
+        return parent::setLastname($lastname);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImage()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImage', []);
+
+        return parent::getImage();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLastname()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLastname', []);
+
+        return parent::getLastname();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setFirsname($firstname)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFirsname', [$firstname]);
+
+        return parent::setFirsname($firstname);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setImage($image)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImage', [$image]);
+
+        return parent::setImage($image);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFirstname()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFirstname', []);
+
+        return parent::getFirstname();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setStatistique($statistique)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStatistique', [$statistique]);
+
+        return parent::setStatistique($statistique);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getStatistique()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStatistique', []);
+
+        return parent::getStatistique();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getId()
+    {
+        if ($this->__isInitialized__ === false) {
+            return (int)  parent::getId();
+        }
+
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
+
+        return parent::getId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function addRole($role)
     {
 
@@ -215,21 +374,6 @@ class User extends \UserBundle\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'eraseCredentials', []);
 
         return parent::eraseCredentials();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getId()
-    {
-        if ($this->__isInitialized__ === false) {
-            return (int)  parent::getId();
-        }
-
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
-
-        return parent::getId();
     }
 
     /**

@@ -11,28 +11,32 @@
         <link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Amaranth:700' rel='stylesheet' type='text/css'>
     	<script type="text/javascript" src="{{ asset('/bundles/JS/utils.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/bundles/JS/autocomplete.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/bundles/JS/OMDB.js') }}"></script>
         <script type='text/javascript' src="{{ asset('/bundles/JS/jquery.particleground.js') }}"></script>
         <link rel="icon" type="image/png" href="{{ asset('/bundles/IMAGE/HTLogo.png') }}">
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/base/jquery-ui.css">
         <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
     	<title>HYPERTube</title>
     </head>
     <body>
     	<div id="header">
-        <img src="{{ asset('/bundles/IMAGE/dab.gif') }}" style="position: absolute; top: 10px; right: 10px; width: 100px; height: 100px; opacity: 0.8;">
     		<div id="search_bar_bundle">
-    			<a><img id="logo" src="{{ asset('/bundles/IMAGE/HyperTube_logo.png') }}"></a>
-                <img id="search_icon" src="{{ asset('/bundles/IMAGE/search_loupe.png') }}">
-                <input type="text" id="search_bar" placeholder="search a movie / series / manga">
+                <a href="{{ path('core_homepage') }}"><img id="logo" src="{{ asset('/bundles/IMAGE/HyperTube_logo.png') }}"></a>
+                <form>
+                    <button id="search_icon" type="submit"><img  style="position: absolute; top: 5%; width: 80%; height: 80%; left: 5%;"src="{{ asset('/bundles/IMAGE/search_loupe.png') }}"></button>
+                    <input type="text" id="search_bar" placeholder="search a movie / series / manga"  />
+                </form>
     		</div>
     		<div id="menu_bar">
     			<div id="menu_container">
     				<div id="selector"></div>
-    				<a><img id="home_icon" src="{{ asset('/bundles/IMAGE/burger_icon.png') }}"></a>
+    				<a href="{{ path('core_homepage') }}"><img id="home_icon" src="{{ asset('/bundles/IMAGE/burger_icon.png') }}"></a>
 	    			<a id="menu_1" href="{{ path('core_homepage') }}"><span class="menu_span_active">HOME</span></a>
 	    			<a id="menu_2" href="{{ path('core_movie') }}"><span class="menu_span_txt" >MOVIES</span></a>
-	    			<a id="menu_3" href=""><span class="menu_span_txt">SERIES</span></a>
-	    			<a id="menu_4" href=""><span class="menu_span_txt">SHONEN</span></a>
+	    			<a id="menu_3" href="{{ path('core_serie') }}"><span class="menu_span_txt">SERIE</span></a>
                     {% if is_granted('IS_AUTHENTICATED_FULLY') == false %}
 	    			<a><img class='icon_menu' src="{{ asset('/bundles/IMAGE/Disconnect.png') }}"></a>
                     {% else %}
@@ -88,5 +92,28 @@
 		{% endblock %}
          <div id="footer" style="position: relative; width: 100%; height: 100px; background-color: rgb(30,30,30); margin-top: 50px;"></div>
         <div id="background"></div>
+        <script type='text/javascript' src="{{ asset('/bundles/JS/pagination.js') }}"></script>
+
     </body>
 <html>
+<script>
+
+    // Si tu veux pimper le truc voici le lien du tuto =>
+    // https://openclassrooms.com/courses/decouvrez-la-puissance-de-jquery-ui/l-autocompletion-1
+    // Documentation officiel => http://api.jqueryui.com/autocomplete/
+    // Tu peux ajouter des images ou autre truc !
+
+    var liste = new Array();
+    {% if data_search is defined %}
+    {% for elem in data_search %}
+        liste.push("{{ elem.title }}");
+    {% endfor %}
+    {% endif %}
+    
+    $('#search_bar').autocomplete({
+        source : liste,
+        minLength : 3
+
+   });
+
+</script>

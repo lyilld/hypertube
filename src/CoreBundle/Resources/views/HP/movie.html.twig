@@ -1,78 +1,107 @@
 {% extends "CoreBundle::layout.html.twig" %}
 {% block content %}
+	<script>
+		var nbPages = {{ count }} / 8;
+		const path = "{{ path('core_movie') }}";
+		{#const test2 = "{{ path('core_stream') }}";#}
+//		console.log("test path -> " + test);
+	</script>
 
-<div id="search_space">
-	<form method="POST" action="">
-		<select class="select" name="filter">
-			<option value="0">Filter</option>
-			<option value="year">Years</option>
-			<option value="title">Alphabetic</option>
-		</select>
-		<select class="select" name="genre">
-			<option value="0">Genre</option>
-			<option value="Action">Action</option>
-			<option value="Adventure">Adventure</option>
-			<option value="Comedie">Comedie</option>
-			<option value="Sci-Fi">Sci-Fi</option>
-		</select>
-		<select class="select" name="Years">
-			<option value="0">Years</option>
-			<option value="2016">2016</option>
-			<option value="2015">2015</option>
-			<option value="2014">2014</option>
-			<option value="2013">2013</option>
-		</select>
-		<select class="select" name="rated">
-			<option value="0">Rated</option>
-			<option value="3">***</option>
-			<option value="4">****</option>
-			<option value="5">*****</option>
-		</select>
-        <input class="select_search" type="text" placeholder="search a movie">
-		<input type="submit" id="submit_filter" value="Search by filter" />
-	</form>
-</div>
-
-
-<div class="pagination-container wow zoomIn mar-b-1x" data-wow-duration="0.5s">
-	<ul class="pagination">
-		<li class="pagination-item--wide first"> <a class="pagination-link--wide first" href="#">Previous</a> </li>
-		<li class="pagination-item first-number is-active"> <a class="pagination-link" href="#">1</a> </li>
-		<li class="pagination-item"> <a class="pagination-link" href="#">2</a> </li>
-		<li class="pagination-item "> <a class="pagination-link" href="#">3</a> </li>
-		<li class="pagination-item"> <a class="pagination-link" href="#">4</a> </li>
-		<li class="pagination-item"> <a class="pagination-link" href="#">5</a> </li>
-		<li class="pagination-item--wide last"> <a class="pagination-link--wide last" href="#">Next</a> </li>
-	</ul>
-</div>
-
-
-<div id="content_page">
-{% for elem in data %}
-	<div class="film_container" id="film">
-	    <h3 id="film_name" class="title">{{ elem.Title }}</h3>
-	    <div class="plot">{{ elem.Plot }}</div>
-	    <div class="actors">{{ elem.Actors }}</div>
-	    <div class="rea">{{ elem.Director }}</div>
-	    <div class="poster"><img id="real_poster" src="{{ elem.Poster }}"/></div>
-	    <div class="time">{{ elem.Runtime }}</div>
-	    <div class="genre">{{ elem.Genre }}</div>
-	    <div class="year">{{ elem.Year }}</div>
+	<div id="search_space">
+		<form method="POST" action="">
+			<select class="select" name="filter" id="filter">
+				<option value="0">Filter</option>
+				<option value="year">Years</option>
+				<option value="title">Alphabetic</option>
+			</select>
+			<select class="select" name="genre" id="genre">
+				<option value="0">Genre</option>
+				<option value="Action">Action</option>
+				<option value="Adventure">Adventure</option>
+				<option value="Comedy">Comedy</option>
+				<option value="Sci-Fi">Sci-Fi</option>
+				<option value="Animation">Animation</option>
+			</select>
+			<select class="select" name="years" id="years">
+				<option value="0">Years</option>
+				<option value="2016">2016</option>
+				<option value="2015">2015</option>
+				<option value="2014">2014</option>
+				<option value="2013">2013</option>
+				<option value="2013">2012</option>
+				<option value="2013">2011</option>
+				<option value="2013">2010</option>
+			</select>
+			<select class="select" name="rated" id="rated">
+				<option value="0">Rated</option>
+				<option value="3">***</option>
+				<option value="4">****</option>
+				<option value="5">*****</option>
+			</select>
+			<input class="select_search" type="text" placeholder="search a movie" name="search" id="search">
+			<button onclick="pagAjax(1, callback(), 1)" type="button" id="submit_filter">Search</button>
+		</form>
 	</div>
-{% endfor %}
+
+<div id="destroy">
+	<div class="pagination-container wow zoomIn mar-b-1x" data-wow-duration="0.5s">
+		<ul class="pagination">
+			<li class="pagination-item--wide first"><button value="1"  class="previousButton pagination-link--wide first" onclick="Button(1)" style="visibility: hidden;">Previous</button></li>
+			<li class="pagination-item first-number is-active"><button onclick="case_click(this);" type="button" value="1" class="case1 pagination-link">1</button></li>
+			<li class="pagination-item"><button onclick="case_click(this);" type="button" value="2"  class="case2 pagination-link">2</button></li>
+			<li class="pagination-item"><button onclick="case_click(this);" type="button" value="3"  class="case3 pagination-link">3</button></li>
+			<li class="pagination-item"><button onclick="case_click(this);" type="button" value="4"  class="case4 pagination-link">4</button></li>
+			<li class="pagination-item"><button onclick="case_click(this);" type="button" value="5"  class="case5 pagination-link">5</button></li>
+			<li class="pagination-item--wide last"><button value="1" class="nextButton pagination-link--wide last" onclick="Button(2)"> Next </button> </li>
+		</ul>
+	</div>
+
+	<div id="test">
+		<div id="content_page" class="content_page">
+			{% for elem in data %}
+				<div class="film_container" id="film">
+					<a href="{{ path('core_stream', {'id': elem.idmdb }) }}"id="play_button" class="fa fa-youtube-play" aria-hidden="true"></a>
+					<h3 id="film_name" class="title">{{ elem.Title }}</h3>
+					<div class="plot">{{ elem.Plot }}</div>
+					<div class="actors">{{ elem.Actors }}</div>
+					<div class="rea">{{ elem.Director }}</div>
+					<div class="poster">
+						<img id="real_poster" src="../../../{{ elem.Poster }}"/>
+						<div id="content_rate" style="position: absolute; font-size: 1.8em; left: 10px; color: rgba(230, 220, 80,1.0); text-shadow: 0px 0px 8px rgba(230, 220, 80,1.0); top: 0;">
+							{% for i in 0..(elem.Rating / 2) -1 %}
+								<i class="fa fa-star" aria-hidden="true"></i>
+							{% endfor %}
+							{% set boucle = (elem.Rating % 2) %}
+							{% if boucle != 0 %}
+								{% for i in 0..(boucle - 1) %}
+									<i class="fa fa-star-half" aria-hidden="true"></i>
+								{% endfor %}
+							{% endif %}
+						</div>
+						<div id="content_format" style="position: absolute; font-size: 1.2em; border-radius: 50px; padding: 2px 8px 2px 8px; background-color: rgba(39, 174, 96,1.0); color: rgba(236, 240, 241,1.0); box-shadow: 0px 0px 10px rgba(46, 204, 113,1.0); bottom: 10px; right: 10px;">{{ elem.Streamquality }}</div>
+					</div>
+					<div class="time">{{ elem.Runtime }}</div>
+					<div class="genre">{{ elem.Genre }}</div>
+					<div class="year">{{ elem.Year }}</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+<div id="notFound" style="display: none">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/White-%26-Brown-Eggs.jpg" style="width: 100px; height: 100px">
 </div>
-
-
-<div class="pagination-container wow zoomIn mar-b-1x" data-wow-duration="0.5s">
-	<ul class="pagination">
-		<li class="pagination-item--wide first"> <a class="pagination-link--wide first" href="#">Previous</a> </li>
-		<li class="pagination-item first-number is-active"> <a class="pagination-link" href="#">1</a> </li>
-		<li class="pagination-item"> <a class="pagination-link" href="#">2</a> </li>
-		<li class="pagination-item "> <a class="pagination-link" href="#">3</a> </li>
-		<li class="pagination-item"> <a class="pagination-link" href="#">4</a> </li>
-		<li class="pagination-item"> <a class="pagination-link" href="#">5</a> </li>
-		<li class="pagination-item--wide last"> <a class="pagination-link--wide last" href="#">Next</a> </li>
-	</ul>
+	<div class="pagination-container wow zoomIn mar-b-1x" data-wow-duration="0.5s">
+		<ul class="pagination">
+			<li class="pagination-item--wide first"><button value="1"  class="previousButton pagination-link--wide first" onclick="Button(this.value, 1)" style="visibility: hidden;">Previous</button></li>
+			<li class="pagination-item first-number is-active"><button onclick="case_click(this);" type="button" value="1" class="case1 pagination-link">1</button></li>
+			<li class="pagination-item"><button onclick="case_click(this);" type="button" value="2"  class="case2 pagination-link">2</button></li>
+			<li class="pagination-item"><button onclick="case_click(this);" type="button" value="3"  class="case3 pagination-link">3</button></li>
+			<li class="pagination-item"><button onclick="case_click(this);" type="button" value="4"  class="case4 pagination-link">4</button></li>
+			<li class="pagination-item"><button onclick="case_click(this);" type="button" value="5"  class="case5 pagination-link">5</button></li>
+			<li class="pagination-item--wide last"><button value="1" class="nextButton pagination-link--wide last" onclick="Button(this.value, 2)"> Next </button> </li>
+		</ul>
+	</div>
 </div>
 
 {% endblock %}

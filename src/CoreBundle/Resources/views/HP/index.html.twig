@@ -57,93 +57,56 @@
 				<div class="home_div_title"><span class="home_div_title_bold">LAST </span>streaming add</div>
 				<div class="categorie_film">
 					<div class="categorie_header">Movies</div>
-					<div class="suggest_film">
-					3 filles en cavale [VF]
-					<!-- <img src="http://play.m0k.org/images/william/brice/BRI-Poster.jpg" style="width: 50px; height: 80px; position: relative;"> -->
-					</div>
-					<div class="suggest_film">3 Soeurs unies par le mariage [VF]</div>
-					<div class="suggest_film">L'incroyable histoire de la télé-réalité - Les années Loft Story [VF]</div>
-					<div class="suggest_film">Le garde-champêtre mène l'enquête [VF]</div>
-					<div class="suggest_film">Au bas de l'échelle (TV) [VF]</div>
-					<div class="suggest_film">Quarry S1 E1 [VOSTFR]</div>
-					<div class="suggest_film">Le garde-champêtre mène l'enquête [VF]</div>
-					<div class="suggest_film">Au bas de l'échelle (TV) [VF]</div>
-					<div class="suggest_film">Quarry S1 E1 [VOSTFR]</div>
-					<div class="suggest_film">3 Soeurs unies par le mariage [VF]</div>
-					<div class="suggest_film">superman</div>
-					<div class="suggest_film">L'incroyable histoire de la télé-réalité - Les années Loft Story [VF]</div>
+					{% if latestFilm is defined %}
+						{% for elem in latestFilm  %}
+							<div class="suggest_film">{{ elem['title'] }}</div>
+						{% endfor %}
+					{% endif %}
 				</div>
 				<div class="categorie_serie">
 					<div class="categorie_header">Series</div>
-					<div class="suggest_film">Au bas de l'échelle (TV) [VF]</div>
-					<div class="suggest_film">Quarry S1 E1 [VOSTFR]</div>
-					<div class="suggest_film">Le garde-champêtre mène l'enquête [VF]</div>
-					<div class="suggest_film">Au bas de l'échelle (TV) [VF]</div>
-					<div class="suggest_film">Quarry S1 E1 [VOSTFR]</div>
-					<div class="suggest_film">3 Soeurs unies par le mariage [VF]</div>
-				</div>
-				<div class="categorie_anim">
-					<div class="categorie_header">Shonen</div>
-					<div class="suggest_film">Le garde-champêtre mène l'enquête [VF]</div>
-					<div class="suggest_film">Au bas de l'échelle (TV) [VF]</div>
-					<div class="suggest_film">Quarry S1 E1 [VOSTFR]</div>
-					<div class="suggest_film">Le garde-champêtre mène l'enquête [VF]</div>
-					<div class="suggest_film">Au bas de l'échelle (TV) [VF]</div>
-					<div class="suggest_film">Quarry S1 E1 [VOSTFR]</div>
-					<div class="suggest_film">3 Soeurs unies par le mariage [VF]</div>
-					<div class="suggest_film">superman</div>
-					<div class="suggest_film">L'incroyable histoire de la télé-réalité - Les années Loft Story [VF]</div>
-					<div class="suggest_film">Le garde-champêtre mène l'enquête [VF]</div>
-					<div class="suggest_film">Au bas de l'échelle (TV) [VF]</div>
-					<div class="suggest_film">Quarry S1 E1 [VOSTFR]</div>
+					<div class="categorie_serie">
+						{% if latestSerie is defined %}
+							{% for elem in latestSerie  %}
+								<div class="suggest_film">{{ elem['title'] }}</div>
+							{% endfor %}
+						{% endif %}
+					</div>
 				</div>
 			</div>
 
-			<div id="best_week" class="div_stream">
-				<div class="home_div_title"><span class="home_div_title_bold">BEST</span> streaming of the week</div>
-				<div class="categorie_film">
-					<div class="categorie_header_view"><span class="categorie_header_view_name">Movies</span><span class="categorie_header_view_view">views</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-				</div>
-				<div class="categorie_serie">
-					<div class="categorie_header_view"><span class="categorie_header_view_name">Series</span><span class="categorie_header_view_view">views</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-				</div>
-				<div class="categorie_anim">
-					<div class="categorie_header_view"><span class="categorie_header_view_name">Shonen</span><span class="categorie_header_view_view">views</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-				</div>
-			</div>
+			{#<div id="best_week" class="div_stream">#}
+				{#<div class="home_div_title"><span class="home_div_title_bold">BEST</span> streaming of the week</div>#}
+				{#<div class="categorie_film">#}
+					{#<div class="categorie_header_view"><span class="categorie_header_view_name">Movies</span><span class="categorie_header_view_view">views</span></div>#}
+					{#<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>#}
+					{#<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>#}
+					{#<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>#}
+					{#<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>#}
+				{#</div>#}
+				{#<div class="categorie_serie">#}
+					{#<div class="categorie_header_view"><span class="categorie_header_view_name">Series</span><span class="categorie_header_view_view">views</span></div>#}
+					{#<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>#}
+				{#</div>#}
+			{#</div>#}
 
 			<div id="best_week" class="div_stream">
 				<div class="home_div_title"><span class="home_div_title_bold">MOST</span> popular stream</div>
 				<div class="categorie_film">
 					<div class="categorie_header_view"><span class="categorie_header_view_name">Movies</span><span class="categorie_header_view_view">views</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
+					{% if mostViewFilm is defined %}
+						{% for elem in mostViewFilm %}
+					<div class="suggest_film2"><span class="suggest_film_name">{{ elem['title'] }}</span><span class="suggest_film_view">{{ elem['view'] }}</span></div>
+						{% endfor %}
+					{% endif %}
 				</div>
 				<div class="categorie_serie">
 					<div class="categorie_header_view"><span class="categorie_header_view_name">Series</span><span class="categorie_header_view_view">views</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-				</div>
-				<div class="categorie_anim">
-					<div class="categorie_header_view"><span class="categorie_header_view_name">Shonen</span><span class="categorie_header_view_view">views</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
-					<div class="suggest_film2"><span class="suggest_film_name">Au bas de l'échelle (TV) [VF]</span><span class="suggest_film_view">9495</span></div>
+					{% if mostViewSerie is defined %}
+						{% for elem in mostViewSerie %}
+							<div class="suggest_film2"><span class="suggest_film_name">{{ elem['title'] }}</span><span class="suggest_film_view">{{ elem['view'] }}</span></div>
+						{% endfor %}
+					{% endif %}
 				</div>
 			</div>
 

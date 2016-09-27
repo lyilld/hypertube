@@ -27,13 +27,63 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $context = $this->context;
         $request = $this->request;
 
+        // core_homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'core_homepage');
+            }
+
+            return array (  '_controller' => 'CoreBundle\\Controller\\CoreController::indexAction',  '_route' => 'core_homepage',);
+        }
+
+        // core_movie
+        if ($pathinfo === '/movie') {
+            return array (  '_controller' => 'CoreBundle\\Controller\\CoreController::movieAction',  '_route' => 'core_movie',);
+        }
+
+        if (0 === strpos($pathinfo, '/s')) {
+            // core_serie
+            if ($pathinfo === '/serie') {
+                return array (  '_controller' => 'CoreBundle\\Controller\\CoreController::serieAction',  '_route' => 'core_serie',);
+            }
+
+            // core_stream
+            if (0 === strpos($pathinfo, '/stream') && preg_match('#^/stream/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'core_stream')), array (  '_controller' => 'CoreBundle\\Controller\\CoreController::streamAction',));
+            }
+
+            // core_search
+            if ($pathinfo === '/search') {
+                return array (  '_controller' => 'CoreBundle\\Controller\\SearchController::searchAction',  '_route' => 'core_search',);
+            }
+
+        }
+
         // user_homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'user_homepage');
             }
 
-            return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'user_homepage',);
+            return array (  '_controller' => 'UserBundle:Default:index',  '_route' => 'user_homepage',);
+        }
+
+        if (0 === strpos($pathinfo, '/profile/Edit')) {
+            // edit_image
+            if ($pathinfo === '/profile/EditImage') {
+                return array (  '_controller' => 'UserBundle\\Controller\\ProfileController::EditImageAction',  '_route' => 'edit_image',);
+            }
+
+            // edit_email
+            if ($pathinfo === '/profile/EditEmail') {
+                return array (  '_controller' => 'UserBundle\\Controller\\ProfileController::EditEmailAction',  '_route' => 'edit_email',);
+            }
+
+        }
+
+        // forget_password
+        if ($pathinfo === '/forgetpwd') {
+            return array (  '_controller' => 'UserBundle\\Controller\\SecurityController::ForgetPWDAction',  '_route' => 'forget_password',);
         }
 
         if (0 === strpos($pathinfo, '/log')) {
@@ -45,7 +95,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                         goto not_fos_user_security_login;
                     }
 
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'fos_user_security_login',);
+                    return array (  '_controller' => 'UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'fos_user_security_login',);
                 }
                 not_fos_user_security_login:
 
@@ -56,7 +106,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                         goto not_fos_user_security_check;
                     }
 
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::checkAction',  '_route' => 'fos_user_security_check',);
+                    return array (  '_controller' => 'UserBundle\\Controller\\SecurityController::checkAction',  '_route' => 'fos_user_security_check',);
                 }
                 not_fos_user_security_check:
 
@@ -69,7 +119,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                     goto not_fos_user_security_logout;
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'fos_user_security_logout',);
+                return array (  '_controller' => 'UserBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'fos_user_security_logout',);
             }
             not_fos_user_security_logout:
 
@@ -87,7 +137,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                     return $this->redirect($pathinfo.'/', 'fos_user_profile_show');
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::showAction',  '_route' => 'fos_user_profile_show',);
+                return array (  '_controller' => 'UserBundle\\Controller\\ProfileController::showAction',  '_route' => 'fos_user_profile_show',);
             }
             not_fos_user_profile_show:
 
@@ -98,7 +148,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                     goto not_fos_user_profile_edit;
                 }
 
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::editAction',  '_route' => 'fos_user_profile_edit',);
+                return array (  '_controller' => 'UserBundle\\Controller\\ProfileController::editAction',  '_route' => 'fos_user_profile_edit',);
             }
             not_fos_user_profile_edit:
 
@@ -117,7 +167,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                         return $this->redirect($pathinfo.'/', 'fos_user_registration_register');
                     }
 
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'fos_user_registration_register',);
+                    return array (  '_controller' => 'UserBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'fos_user_registration_register',);
                 }
                 not_fos_user_registration_register:
 
@@ -129,7 +179,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                             goto not_fos_user_registration_check_email;
                         }
 
-                        return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::checkEmailAction',  '_route' => 'fos_user_registration_check_email',);
+                        return array (  '_controller' => 'UserBundle\\Controller\\RegistrationController::checkEmailAction',  '_route' => 'fos_user_registration_check_email',);
                     }
                     not_fos_user_registration_check_email:
 
@@ -141,7 +191,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                                 goto not_fos_user_registration_confirm;
                             }
 
-                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_registration_confirm')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmAction',));
+                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_registration_confirm')), array (  '_controller' => 'UserBundle\\Controller\\RegistrationController::confirmAction',));
                         }
                         not_fos_user_registration_confirm:
 
@@ -152,7 +202,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                                 goto not_fos_user_registration_confirmed;
                             }
 
-                            return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmedAction',  '_route' => 'fos_user_registration_confirmed',);
+                            return array (  '_controller' => 'UserBundle\\Controller\\RegistrationController::confirmedAction',  '_route' => 'fos_user_registration_confirmed',);
                         }
                         not_fos_user_registration_confirmed:
 
